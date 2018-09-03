@@ -1,0 +1,14 @@
+const bindPrefix = (name) => `src/node_modules/${name}`;
+
+module.exports = {
+    external_files: {
+        openpgp: ['openpgp/dist/openpgp.worker.min.js', 'openpgp/dist/openpgp.min.js'].map(bindPrefix)
+    },
+
+    vendor_files: {
+        js: [
+	     'pmcrypto/build/pmcrypt.js'
+	     'asmcrypto.js/asmcrypto.js',
+	     ].map(bindPrefix),
+    }
+};
