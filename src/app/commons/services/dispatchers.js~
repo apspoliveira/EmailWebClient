@@ -1,0 +1,5 @@
+angular.module('webmail.commons')
+    .factory('dispatchers', dispatchers);
+function dispatchers($rootScope) {
+
+}

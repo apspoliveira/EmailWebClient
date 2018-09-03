@@ -1,0 +1,44 @@
+<div 
+    class="signupCreationProcess-container" 
+    ng-class="{
+        'signupCreationProcess-error': signupError 
+    }">
+
+    <header class="text-center">
+        <div class="creating-loader-container">
+            <atom-loader data-loader-theme="primary"></atom-loader>
+        </div>
+        <h2 class="text-center signupCreationProcess-title">Creating account</h2>
+        <h2 class="text-center signupCreationProcess-error-title">Sign up failed</h2>
+    </header>
+
+    <p class="signupCreationProcess-error-msg"><span>An error occured while trying to create your account. To see common probelms and solutions</span> <a target="_blank" href="https://protonmail.com/support/knowledge-base/common-sign-up-problems-and-solutions/">click here</a>.</p>
+
+    <div class="text-left">
+        <ol id="creationList">
+            <li class="done">
+                <span>Generating keys</span>
+            </li>
+            <li ng-class="{ 'done': flow.creation }">
+                <i ng-class="{ 'show': flow.creation }" class="show fa fa-check"></i>
+                <span>Creating new account</span>
+            </li>
+            <li ng-class="{ 'done': flow.loggedin }">
+                <i ng-class="{ 'show': flow.loggedin }" class="fa fa-check"></i>
+                <span>Logging in to new account</span>
+            </li>
+            <li ng-class="{ 'done': flow.setupaccount }">
+                <i ng-class="{ 'show': flow.setupaccount }" class="fa fa-check"></i>
+                <span>Setting up new account</span>
+            </li>
+            <li ng-class="{ 'done': flow.userready }">
+                <i ng-class="{ 'show': flow.userready }" class="fa fa-check"></i>
+                <span>Done</span>
+            </li>
+            <li ng-class="{ 'done': flow.done }">
+                <i ng-class="{ 'show': flow.done }" class="fa fa-check"></i>
+                <span>Redirecting</span>
+            </li>
+        </ol>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+'use strict';
+
+angular.module('auth', ['ngRoute'])
+
+.config(['$routeProvider', function($routeProvider) {
+  $routeProvider.when('/auth', {
+    templateUrl: 'layout/auth.html',
+    controller: 'AuthController'
+  });
+}])
+
+.controller('AuthController', [function() {
+
+}])
+ const parameters = [
+		     'email',
+		     'address',
+		     'page',
+		     'filter',
+		     'sort',
+		     'label',
+		     'from',
+		     'to',
+		     'subject',
+		     'keyword',
+		     'begin',
+		     'end',
+		     'attachments',
+		     'wildcard',
+		     'starred',
+		     'reload',
+                'welcome'
+		     ];
+;
+

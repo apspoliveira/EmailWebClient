@@ -1,0 +1,14 @@
+'use strict';
+
+angular.module('secured', ['ngRoute'])
+
+.config(['$routeProvider', function($routeProvider) {
+  $routeProvider.when('/secured', {
+    templateUrl: 'layout/secured.html',
+    controller: 'SecuredController'
+  });
+}])
+
+.controller('SecuredController', [function() {
+
+}]);

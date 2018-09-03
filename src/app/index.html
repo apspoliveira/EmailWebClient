@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" ng-app="webmail">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <base href="/">
+        <title>Email Web Client - Login</title>
+        <meta name="description" content="Log in or create an account.">
+
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+        
+	<link rel="stylesheet" href="app.css">
+	<link rel="stylesheet" href="style.css">
+	<!--<link rel="stylesheet" href="app/styles/app.css">-->
+	
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="bower_components/angular-messages/angular-messages.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="node_modules/babel-polyfill/dist/polyfill.js"></script>
+	<script src="node_modules/lodash/lodash.js"></script>
+	<script src="node_modules/core-js/client/core.js"></script>
+	<script src="node_modules/asmcrypto.js/asmcrypto.js"></script>
+	<script src="bower_components/openpgp/dist/openpgp.js"></script>
+	<script src="bower_components/bcryptjs/dist/bcrypt.js"></script>
+	<script src="node_modules/pmcrypto/dist/pmcrypto-browser.js"></script>
+        <script src="app.js"></script>
+	<script src="routes.js"></script>
+	<script src="authentication/services/passwords.js"></script>
+	<script src="authentication/loginForm.js"></script>
+	<!--<script src="authentication/index.js"></script>-->
+	<script src="authentication/modals/helpLoginModal.js"></script>
+	<script src="authentication/interceptors/authHttpResponseInterceptor.js"></script>
+	<script src="authentication/services/authApi.js"></script>
+	<script src="authentication/services/handle401.js"></script>
+	<script src="authentication/services/handle10003.js"></script>
+	<script src="authentication/services/auth.js"></script>
+	<script src="authentication/services/srp.js"></script>
+	<!--<script src="commons/factories/AppModel.js"></script>-->
+	<script src="commons/models/user.js"></script>
+	<script src="commons/models/address.js"></script>
+	<script src="commons/providers/url.js"></script>
+	<script src="commons/services/dispatchers.js"></script>
+	<script src="commons/services/webcrypto.js"></script>
+	<script src="core/interceptors/formatResponseInterceptor.js"></script>
+	<!--<script src="notifications/base.js"></script>
+	<script src="user/humanVerification.js"></script>-->
+	<script src="user/directives/signupUserForm.js"></script>
+	<!--<script src="user/signupHumanForm.js"></script>
+	<script src="user/signupPayForm.js"></script>
+	<script src="user/signupCreationProcess.js"></script>-->
+	<script src="user/services/signupUserProcess.js"></script>
+	<script src="user/services/signupModel.js"></script>
+	<script src="user/directives/usernameDomain.js"></script>
+	<script src="user/directives/usernamePassword.js"></script>
+	<!--<script src="views/account.js"></script>
+	<script src="views/reset-login-password.js"></script>
+	<script src="views/signup.js"></script>
+	<script src="layout/login.js"></script>
+	<script src="modals/welcome.js"></script>
+	<script src="ui/header/headerNoAuth.js"></script>
+	<script src="ui/customRadio.js"></script>
+	<script src="layout/auth.js"></script>
+	<script src="bugReport/newBugReport.js"></script>
+	<script src="script.js"></script>-->
+    </head>
+
+<body> <!--ng-app="demo" ng-strict-di-->
+  <ul class="menu">
+	  <li><a href="#!/loginForm">loginForm</a></li>
+	  <!--<li><a href="#!/account">account</a></li>-->
+	  <!--<li><a href="#!/reset-login-password">reset-login-password</a></li>-->
+	  <li><a href="#!/signup">signup</a></li>
+	  <li><a href="#!/signupUserForm">signupUserForm</a></li>
+	  <!--<li><a href="#!/signupHumanForm">signupHumanForm</a></li>
+	  <li><a href="#!/signupPayForm">signupPayForm</a></li>
+	  <li><a href="#!/humanVerification">humanVerification</a></li>
+	  <li><a href="#!/signupCreationProcess">signupCreationProcess</a></li>
+	  <li><a href="#!/welcome">welcome</a></li>
+	  <li><a href="#!/base">base</a></li>
+	  <li><a href="#!/login">login</a></li>
+	  <li><a href="#!/headerNoAuth">headerNoAuth</a></li>-->
+	  <li><a href="#!/auth">auth</a></li>
+	  <!--<li><a href="#!/customRadio">customRadio</a></li>-->
+	  <li><a href="#!/base">base</a></li>
+</ul>
+<div ng-view></div>
+
+</body>
+</html>

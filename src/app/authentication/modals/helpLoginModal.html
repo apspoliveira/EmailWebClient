@@ -1,0 +1,30 @@
+<div class="small">
+  <div class="">
+    <!--<button type="button" ng-click="ctrl.cancel()" class="close">close</button>-->
+
+   <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Help</h3>
+      </div>
+      <div class="modal-body text-center">
+        <p>
+          <a class="pm_button primary" ui-sref="support.reset-password" ng-click="ctrl.cancel()">Reset password</a>
+        </p>
+        <p>
+          <a href="https://protonmail.com/username" target="_self" class="pm_button primary">Forgot username?</a>
+        </p>
+        <p>
+          <a href="https://protonmail.com/support/knowledge-base/common-login-problems/" target="_blank" class="pm_button primary">Common login problems</a>
+        </p>
+        <p>
+          <a href="https://protonmail.com/support" target="_blank" class="pm_button primary">Email our support team</a>
+        </p>
+      </div>
+    </div>
+    <div class="modal-footer text-right">
+      <a 
+         id="cancelModalBtn" 
+         class="pm_button"
+         ng-click="ctrl.cancel()">Cancel</a>
+    </div>
+ </div>

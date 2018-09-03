@@ -1,0 +1,76 @@
+angular.module('webmail.user')
+    .factory('signupUserProcess', signupUserProcess);
+function signupUserProcess($rootScope, $injector, signupModel, address, authentication, srp) {
+    const CACHE = {};
+    const dispatch = function(type, data) {
+	$rootScope.$emit('signup', { type, data });
+    }
+
+    function doCreateUser(model) {
+	dispatch('create.user', { value: true });
+	try {
+	    const data = signupModel.createUser(model);
+	    return data;
+	} catch (e) {
+	    return Promise.reject({
+		    error: new Error(e.Error),
+			verbose: true
+			});
+	}
+    }
+
+    function doLogUserIn() {
+	dispatch('loguserin', { value: true });
+
+	authentication.loginWithCredentials(
+		signupModel.get('username'), 
+		signupModel.getPassword()
+					   )
+	.then(function (data) {
+		    authentication.receivedCredentials(data);
+		return authentication.setAuthCookie(data);
+	    });
+    }
+
+    function doAccountSetup() {
+	dispatch('setup.account', { value: true });
+	//console.log(address);
+	try {
+	    domain = signupModel.getDomain();
+	    const data = address.setup(domain);
+	   
+	    //$rootScope.isLoggedIn = authentication.isLoggedIn();
+	    //$rootScope.isLocked = authentication.isLocked();
+	    //$rootScope.isSecure = authentication.isSecured();
+	    return data;
+	} catch (err) {
+            throw err;
+        }
+    }
+    
+    function createAddress() {
+	try {
+	    doLogUserIn();
+	    doAccountSetup();
+	} catch (e) {
+	    throw e;
+	}
+    }
+    
+    function create(model) {
+	try {
+	    doCreateUser(model);
+	    createAddress();
+	} catch (e) {
+	    throw e;
+	}
+    }
+    
+    const createAccount = function(model) {
+	create(model);
+    }
+
+    return { createAccount };
+    //};
+}/*)*/;
+//export signupUserProcess;
