@@ -1,0 +1,88 @@
+angular.module('hellosolarsystem', ['ui.router'])
+
+.config(function($stateProvider) {
+	    // An array of state definitions 
+	    var states = [
+			 
+		     {
+			     name: 'hello',
+			     url: '/hello', 
+			     // Using component: instead of template: 
+			     component: 'hello' 
+			     /*template: '<h3>{{$ctrl.greeting}} solar system!</h3>' +
+			     '<button ng-click="$ctrl.toggleGreeting()">toggle greeting</button>',
+			     controller: function() {
+		    this.greeting = 'hello';
+		    
+		    this.toggleGreeting = function() {
+			this.greeting = (this.greeting == 'hello') ? 'whats up' : 'hello'
+		    }
+		    }*/
+			     
+
+		     },
+
+			 {
+			     name: 'about', 
+			     url: '/about', 
+			     component: 'about' 
+			     //template: '<h3>Its the UI-Router<br>Hello Solar System app!</h3>'
+			 },
+ 
+			 {
+			     name: 'people', 
+			     url: '/people', 
+			     /*bindings: { people: '<' },
+			     template: '<h3>Some people:</h3>' +
+			     '<ul>' +
+			     ' <li ng-repeat="person in $ctrl.people">' +
+			     '    <a ui-sref="person({ personId: person.id })">' +
+			     ' {{person.name}}' +
+			     '   </a>' +
+			     '  </li>' +
+			     '</ul>',*/
+			     
+			     component: 'people', 
+			     // This state defines a 'people' resolve 
+			     // It delegates to the PeopleService to HTTP fetch (async) 
+			     // The people component receives this via its `bindings: `
+			     resolve: {
+				 people: function(PeopleService) {
+				     return PeopleService.getAllPeople();
+				 }
+			     }
+			 },
+
+			 {
+			     name: 'person',
+			     // This state takes a URL parameter called personId 
+			     url: '/people/{personId}',
+			     component: 'person', 
+			     /*bindings: { person: '<' },
+			     template: '<h3>A person!</h3>' +
+			     '<div>Name: {{$ctrl.person.name}}</div>' +
+			     '<div>Id: {{$ctrl.person.id}}</div>' +
+			     '<div>Company: {{$ctrl.person.company}}</div>' +
+			     '<div>Email: {{$ctrl.person.email}}</div>' +
+			     '<div>Address: {{$ctrl.person.address}}</div>' +
+			     '<button ui-sref="people">Close</button>',*/
+			     // This state defines a 'person' resolve 
+			     // It delegates to the PeopleService, passing the personId parameter 
+			     resolve: {
+				 person: function(PeopleService, $transition$) {
+				     return PeopleService.getPerson($transition$.params().personId);
+				 }
+			     }
+			 }
+		    	 ]
+
+		// Loop over the state definitions and register them 
+		states.forEach(function(state) {
+			$stateProvider.state(state);
+		    });
+    })
+    
+// To account for plunker embeds timing out, preload the async data 
+.run(function($http) {
+	$http.get('data/people.json', { cache: true });
+	}); 

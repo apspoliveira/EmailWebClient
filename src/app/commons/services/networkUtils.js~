@@ -1,0 +1,6 @@
+angular.module('webmail.commons')
+    .factory('networkUtils', networkUtils);
+function networkUtils() {
+
+
+}

@@ -1,0 +1,19 @@
+<div class="composerAttachments-container composerAttachments-close">
+  <div class="composerAttachments-header">
+        <span class="composerAttachments-counter-attachments">
+          <i class="fa fa-paperclip"></i> {{ message.Attachments.length - message.NumEmbedded }} <span>file attached</span>
+        </span>
+        <span class="composerAttachments-counter-embedded">
+          <i class="fa fa-image embedded"></i> {{ message.NumEmbedded }} <span>embedded image</span>
+        </span>
+        <span class="composerAttachments-action">
+          <i>{{ labelHeader }}</i>
+        </span>
+  </div>
+  <div class="composerAttachments-loaders">
+    <composer-attachments-item 
+       ng-repeat="attachment in list track by attachment.id" 
+       class="composerAttachments-loader uploading">
+    </composer-attachments-item>
+  </div>    
+</div>

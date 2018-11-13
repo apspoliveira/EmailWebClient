@@ -1,0 +1,29 @@
+<section class="conversation-container">
+  <header id="conversationHeader">
+    <h1>
+      <span>({{ conversation.NumMessages }})</span>
+      <span>{{ conversation.Subject | unescape }}</span>
+      <pt-star data-model="conversation" data-pt-star-type="conversation" class="pm_buttons"></pt-star>
+    </h1>
+    <div class="containsMessage">
+      <p class="alert">
+        <span>This conversation contains trashed messages.</span>
+        <span>This conversation contains non-trashed messages.</span>
+        <a href="#" ng-click="toggleOption('showTrashed')">Show trashed messages</a>
+        <a href="#" ng-click="toggleOption('showNonTrashed')">Show non-trashed messages</a>
+        <a href="#" ng-click="toggleOption('showTrashed')" ng-show="showTrashed === true && inTrash === false" translate translate-context="Action">Hide trashed messages</a>
+        <a href="#" ng-click="toggleOption('showNonTrashed')" ng-show="showNonTrashed === true && inTrash === true" translate translate-context="Action">Hide non-trashed messages</a>
+      </p>
+    </div>
+  </header>
+  <div id="pm_thread" tabindex="0">
+    <message
+       id="message{{ $index }}" 
+       data-model="message" 
+       data-marked="markedMessage" 
+       data-last="$last" 
+       data-index="$index" 
+       ng-repeat="message in messages | filter: filterMessages:showTrashed:showNonTrashed track by message.ID" 
+       ></message>
+  </div>  
+</section>

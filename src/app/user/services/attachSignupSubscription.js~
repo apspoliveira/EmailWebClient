@@ -1,0 +1,7 @@
+angular.module('webmail.user')
+    .factory('attachSignupSubscription', attachSignupSubscription);
+function attachSignupSubscription() {
+    
+
+
+}

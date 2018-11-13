@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('base', ['ngRoute'])
+angular.module('webmail.user')
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/base', {

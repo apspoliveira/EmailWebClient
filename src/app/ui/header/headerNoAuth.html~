@@ -5,8 +5,8 @@
     <li class="headerNoAuth-item-back">
       <a 
          class="headerNoAuth-item-back-button__noAuth" 
-         href="https://protonmail.com">
-        <span>Back to protonmail.com</span>
+         href="https://mail.com">
+        <span>Back to mail.com</span>
       </a>
       <a 
          class="headerNoAuth-item-back-btn__Auth"  href="/inbox" title="Inbox">
@@ -25,7 +25,7 @@
     </li>
     <li class="headerNoAuth-item-logout__Auth">
       <a 
-         class="headerNoAuth-item-logout-button«ß"
+         class="headerNoAuth-item-logout-button"
          ui-sref="login">Log out</a>
     </li>
   </ul>

@@ -1,0 +1,6 @@
+angular.module('webmail.user')
+    .factory('signatureModel', signatureModel);
+function signatureModel() {
+
+
+}

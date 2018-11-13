@@ -1,13 +1,11 @@
-angular.module('commons.url', [])
+angular.module('webmail.commons')
     .factory('url', url);
 function url() {
-    var base = 'http://localhost:8000/#!';
-    //var prefix = '';
+    var base = 'https://mail.protonmail.com/api';
 
     const make = function(key, prefix) { 
 	var url = [`${prefix}/${key}`.trim()].join('/');
-	//console.log(url);
-	return url;
+xn	return url;
     };
 
     function get() {
@@ -18,5 +16,5 @@ function url() {
 	return make(key, get());
     };
 
-    return { build };
+    return { build, get, make };
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('webmail.user', ['ngRoute', 'ngMessages'])
+angular.module('webmail.user')
 
     .config(['$routeProvider', function($routeProvider) {
                 $routeProvider.when('/usernameDomain', {
@@ -19,7 +19,7 @@ angular.module('webmail.user', ['ngRoute', 'ngMessages'])
 			label: 'Yahoo Mail' 
 		    }, {
 			value: 3, 
-			label: 'ProtonMail' 
+			label: 'protonmail.com' 
 		    }, {
 			value: 4, 
 			label: 'AOL Mail' 

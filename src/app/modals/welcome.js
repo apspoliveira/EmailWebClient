@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('modals.welcome', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {

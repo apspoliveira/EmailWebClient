@@ -3,8 +3,8 @@
 angular.module('ui', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {
-		$routeProvider.when('/customRadion', {
-			templateUrl: 'ui/customRadion.html',
+		$routeProvider.when('/customRadio', {
+			templateUrl: 'ui/customRadio.html',
 			    controller: 'CustomRadioController'
 			    });
 	    }])

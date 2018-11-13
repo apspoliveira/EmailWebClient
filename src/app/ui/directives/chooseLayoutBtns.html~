@@ -1,0 +1,12 @@
+<div class="pm_buttons layout chooseLayoutBtns-container">
+    <a 
+        href="#" 
+        class="chooseLayoutBtns-btn-column" 
+        data-action="columns">columns
+    </a>
+    <a 
+        href="#"
+        class="chooseLayoutBtns-btn-rows" 
+        data-actions="rows">rows
+    </a>
+</div>

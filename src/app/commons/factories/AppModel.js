@@ -1,13 +1,13 @@
-angular.module('webmail.commons');
-
+angular.module('webmail.commons')
+    .factory('AppModel', AppModel);
 function AppModel($rootScope) {
     const MODEL = {};
     function dispatch(type, data) { $rootScope.$emit('AppModel', { type, data }) };
+    
     function set(key, value) {
 	const previous = MODEL[key];
 	MODEL[key] = value;
 	previous !== value && dispatch(key, { value });
-	//console.log(MODEL);
     };
     function is(key) { !!MODEL[key]; }
     function get(key) { MODEL[key]; }

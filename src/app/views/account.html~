@@ -144,94 +144,94 @@
         <header-block class="settingsAccount-header-language">
           <h2 
              class="settingsAccount-title-language">Language</h2>
-                    </header-block>
-                    <label for="selectDefaultLanguage">Choose your default language.</label>
-                    <span class="inline">
-                        <select id="selectDefaultLanguage" ng-model="locale" ng-options="locale.label for locale in locales" ng-change="saveDefaultLanguage()"></select>
-                        <i class="fa fa-angle-down"></i>
-                    </span>
-                </section>
+        </header-block>
+        <label for="selectDefaultLanguage">Choose your default language.</label>
+        <span class="inline">
+          <select id="selectDefaultLanguage" ng-model="locale" ng-options="locale.label for locale in locales" ng-change="saveDefaultLanguage()"></select>
+          <i class="fa fa-angle-down"></i>
+        </span>
+      </section>
+      
+      <section class="col-1-2">
+        <header-block class="settingsAccount-header-contacts">
+          <h2 
+             class="settingsAccount-title-contacts">Automatically save contacts</h2>
+        </header-block>
+        <div class="clearfix">
+          <div class="col-3-8">
+            <label>Automatically save contacts</label>
+          </div>
+          <div class="col-5-8">
+            <div class="col-1-2">
+              <label>
+                <custom-radio data-custom-ng-model="autosaveContacts" data-custom-ng-value="1" data-custom-ng-change="saveAutosaveContacts()"></custom-radio>
+                <span>Enabled</span>
+              </label>
+            </div>
+            <div class="col-1-2">
+              <label>
+                <custom-radio data-custom-ng-model="autosaveContacts" data-custom-ng-value="0" data-custom-ng-change="saveAutosaveContacts()"></custom-radio>
+                <span>Disabled</span>
+              </label>
+            </div>
+            <p>
+              <a href="https://protonmail.com/support/knowledge-base/autosave-contact-list" target="_blank" class="link">Learn more</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </div><!--/.row-->
     
-                <section class="col-1-2">
-                    <header-block class="settingsAccount-header-contacts">
-                        <h2 
-                            class="settingsAccount-title-contacts">Automatically save contacts</h2>
-                    </header-block>
-                    <div class="clearfix">
-                        <div class="col-3-8">
-                            <label>Automatically save contacts</label>
-                        </div>
-                        <div class="col-5-8">
-                            <div class="col-1-2">
-                                <label>
-                                    <custom-radio data-custom-ng-model="autosaveContacts" data-custom-ng-value="1" data-custom-ng-change="saveAutosaveContacts()"></custom-radio>
-                                    <span>Enabled</span>
-                                </label>
-                            </div>
-                            <div class="col-1-2">
-                                <label>
-                                    <custom-radio data-custom-ng-model="autosaveContacts" data-custom-ng-value="0" data-custom-ng-change="saveAutosaveContacts()"></custom-radio>
-                                    <span>Disabled</span>
-                                </label>
-                            </div>
-                            <p>
-                                <a href="https://protonmail.com/support/knowledge-base/autosave-contact-list" target="_blank" class="link">Learn more</a>
-                            </p>
-                        </div>
-                    </div>
-                </section>
-            </div><!--/.row-->
-    
-            <div class="row">
-                <section class="col-1-2">
-                    <header-block class="settingsAccount-header-email">
-                        <h2 
-                            class="settingsAccount-title-email">Email Content</h2>
-                    </header-block>
-    
-                    <div class="clearfix">
-                        <div class="col-3-8">
-                            <label class="control-label">Load remote content</label>
-                        </div>
-                        <div class="col-5-8">
-                            <div class="col-1-2">
-                                <label>
-                                    <custom-radio data-custom-ng-change="saveImages()" data-custom-ng-model="images" data-custom-ng-value="1"></custom-radio>
-                                    <span>Auto</span>
-                                </label>
-                            </div>
-                            <div class="col-1-2">
-                                <label>
-                                    <custom-radio data-custom-ng-change="saveImages()" data-custom-ng-model="images" data-custom-ng-value="0"></custom-radio>
-                                    <span>Manual</span>
-                                </label>
-                            </div>
-                            <p>
-                                <a target="_blank" href="https://protonmail.com/support/knowledge-base/images-by-default/" class="pm_button link">Learn more</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="clearfix">
-                        <div class="col-3-8">
-                            <label class="control-label">Load embedded images</label>
-                        </div>
-                        <div class="col-5-8">
-                            <div class="col-1-2">
-                                <label>
-                                    <custom-radio data-custom-ng-change="saveEmbedded()" data-custom-ng-model="embedded" data-custom-ng-value="2"></custom-radio>
-                                    <span>Auto</span>
-                                </label>
-                            </div>
-                            <div class="col-1-2">
-                                <label>
-                                    <custom-radio data-custom-ng-change="saveEmbedded()" data-custom-ng-model="embedded" data-custom-ng-value="0"></custom-radio>
-                                    <span>Manual</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="pm_form col-1-2">
+    <div class="row">
+      <section class="col-1-2">
+        <header-block class="settingsAccount-header-email">
+          <h2 
+             class="settingsAccount-title-email">Email Content</h2>
+        </header-block>
+	
+        <div class="clearfix">
+          <div class="col-3-8">
+            <label class="control-label">Load remote content</label>
+          </div>
+          <div class="col-5-8">
+            <div class="col-1-2">
+              <label>
+                <custom-radio data-custom-ng-change="saveImages()" data-custom-ng-model="images" data-custom-ng-value="1"></custom-radio>
+                <span>Auto</span>
+              </label>
+            </div>
+            <div class="col-1-2">
+              <label>
+                <custom-radio data-custom-ng-change="saveImages()" data-custom-ng-model="images" data-custom-ng-value="0"></custom-radio>
+                <span>Manual</span>
+              </label>
+            </div>
+            <p>
+              <a target="_blank" href="https://protonmail.com/support/knowledge-base/images-by-default/" class="pm_button link">Learn more</a>
+            </p>
+          </div>
+        </div>
+        <div class="clearfix">
+          <div class="col-3-8">
+            <label class="control-label">Load embedded images</label>
+          </div>
+          <div class="col-5-8">
+            <div class="col-1-2">
+              <label>
+                <custom-radio data-custom-ng-change="saveEmbedded()" data-custom-ng-model="embedded" data-custom-ng-value="2"></custom-radio>
+                <span>Auto</span>
+              </label>
+            </div>
+            <div class="col-1-2">
+              <label>
+                <custom-radio data-custom-ng-change="saveEmbedded()" data-custom-ng-model="embedded" data-custom-ng-value="0"></custom-radio>
+                <span>Manual</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="pm_form col-1-2">
                     <header-block class="settingsAccount-header-keyboard">
                         <h2 
                             class="settingsAccount-title-keyboard">Keyboard Shortcuts</h2>

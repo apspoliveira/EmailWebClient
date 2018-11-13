@@ -1,0 +1,5 @@
+angular.module('webmail.sidebar')
+    .directive('sidebarMobileHeader', sidebarMobileHeader);
+function sidebarMobileHeader() {
+    templateUrl: 'sidebar/directives/sidebarMobileHeader.html'
+}

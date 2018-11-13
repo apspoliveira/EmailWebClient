@@ -1,0 +1,6 @@
+angular.module('webmail.utils')
+    .directive('mailtoHandler', mailtoHandler);
+function mailtoHandler() {
+    return {
+    }
+}

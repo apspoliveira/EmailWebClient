@@ -1,14 +1,5 @@
 <div 
-    class="signupPayForm-container" 
-    ng-class="{
-        'signupPayForm-cycle-month': plan.Cycle === 1,
-        'signupPayForm-cycle-year': plan.Cycle === 12,
-        'signupPayForm-plan-plus': plan.Name === 'plus', 
-        'signupPayForm-plan-visionary': plan.Name === 'visionary',
-        'signupPayForm-method-paypal': method.value === 'paypal',
-        'signupPayForm-error': errorPay,
-    }">
-
+   class="signupPayForm-container" 
     <header class="text-center header signupPayForm-header">
         <h2 class="signupPayForm-header-title">
             <span>Billing Information</span>

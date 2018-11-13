@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('ui', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {

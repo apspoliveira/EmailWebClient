@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('protonLoader', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {

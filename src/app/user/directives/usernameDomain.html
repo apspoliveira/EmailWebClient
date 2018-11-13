@@ -15,7 +15,6 @@
        ng-model-options="{ updateOn: 'default blur', 
 			 debounce: { 'default': 500, 'blur': 0 }
 			 }"
-       ng-class="{'success':goodUsername,'error':badUsername}"
        ng-keyup="update()"
        type="text"
        />
@@ -33,13 +32,11 @@
     </div>
     
     <br />
-    <p ng-show="form.username.$valid" class="alert alert-success signUpProcess-about-success">Username available</p>
-    <p ng-show="form.$pending.unique" class="alert alert-info signUpProcess-about-pending">Checking username</p>
+    <p class="alert alert-success signUpProcess-about-success">Username available</p>
+    <p class="alert alert-info signUpProcess-about-pending">Checking username</p>
     
     <div ng-messages="form.username.$error" class="signupProcess-about-error">
       <p ng-message="required" class="alert alert-danger">Username required </p>
-      <!--    <p ng-message="alreadyTaken" class="alert alert-danger">Username already taken</p>
-	      <p ng-message="uniqueError" class="alert alert-danger">The request failed</p>-->
       <p ng-message="valid" class="alert alert-danger">Username invalid</p>
     </div>
   </div>

@@ -1,0 +1,6 @@
+angular.module('webmail.settings')
+    .factory('settingsMailApi', settingsMailApi);
+function settingsMailApi() {
+
+
+}

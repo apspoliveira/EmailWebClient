@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('auth', ['ngRoute'])
+angular.module('webmail.authentication')
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/auth', {

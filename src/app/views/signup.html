@@ -1,31 +1,14 @@
-<signup-user-form 
-   class="signUpProcess-step-1"  
-   data-plans="plans" 
-   data-account="account" 
-   data-domains="domains"></signup-user-form>
-
-<div class="signUpProcess-step-2">
-  <div class="text-center">
-    <div class="genNewKeys-loader-container">
-      <atom-loader data-loader-theme="primary"></atom-loader>
-    </div>
-    <h2 class="text-center" ng-show="!signupError">Generating keys...</h2>
-  </div>
-  <p class="alert">This can take a few seconds of a few minutes depending on your device.</p>
-</div>
+<signup-user-form
+   class="signUpProcess-step-1"
+   data-plans="plans"
+   data-account="account"
+   data-domains="domains">
+</signup-user-form> 
 
 <signup-human-form 
     data-account="account" 
-    class="signUpProcess-step-3"></signup-human-form>
-
-<signup-pay-form 
-    data-plan="plan" 
-    data-account="account" 
-    class="signUpProcess-step-4"
-></signup-pay-form>
-
-<signup-creation-process
-    class="signUpProcess-step-5"></signup-creation-process>
+    class="signUpProcess-step-3">
+</signup-human-form>
 
 <footer id="pm_footer" class="static">
     <app-copyright></app-copyright>

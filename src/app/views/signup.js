@@ -1,14 +1,15 @@
-'use strict';
-
-angular.module('signup', ['ngRoute'])
-
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/signup', {
-    templateUrl: 'views/signup.html',
-    controller: 'SignupController'
-  });
-}])
-
-.controller('SignupController', [function() {
-
-}]);
+angular.module('webmail.user')
+    .directive('signup', signup);
+function signup()
+{
+    return {
+	replace: true,
+	    scope: {
+	    domains: '=',
+		plans: '=',
+		account: '='
+                },
+	    templateUrl: 'views/signup.html',
+	    controller: 'SignupController'
+	    }
+}

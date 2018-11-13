@@ -187,7 +187,7 @@
                             translate-comment="Section heading" 
                             translate-context="Title">Composer Text Direction</h2>
                     </header-block>
-                    <choose-right-to-left"></choose-right-to-left>
+                    <choose-right-to-left></choose-right-to-left>
                 </section>
             </div>
         </div>

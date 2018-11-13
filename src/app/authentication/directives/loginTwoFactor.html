@@ -1,0 +1,27 @@
+<form
+   method="post"
+   id="pm_loginTwoFactor"
+   name="loginTwoFactorForm"
+   class="pm_panel alt pm_form"
+   novalidate role="form"
+   autocomplete="off"
+   ng-submit="enterTwoFactor($event)"
+   action="loginTwoFactor">
+  <img src="assets/img/logo.png" height="20" alt="ProtonMail" class="logo" />
+  <h4 class="text-center margin-bottom">
+    <i class="fa fa-user title-icon"></i> <span>Two-Factor Authentication</span>
+  </h4>
+  
+  <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
+  
+  <div class="margin">
+    <two-fa-field ng-model="twoFactorCode" autofocus tabindex="2" id="twoFactorCode" name="twoFactorCode"></two-fa-field>
+  </div>
+  
+  <div class="loginForm-actions">
+    <div class="loginForm-actions-column">
+      <button id="login_btn_2fa" type="submit" tabindex="3" class="loginForm-actions-main pm-button primary pull-right" ng-disabled="networkActivity.loading() || loginTwoFactorForm.$invalid">Login</button>
+      <a class="pm_button link pull-left" ng-click="displayHelpModal()">need help?</a>
+    </div>
+  </div>
+</form>

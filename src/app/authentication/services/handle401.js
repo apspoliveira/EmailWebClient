@@ -13,15 +13,29 @@ function handle401($http, authentication) {
         return Promise.reject(err);
     };
 
+    const recall = function(config) {
+        _.extend(config.headers, $http.defaults.headers.common);
+	
+        return $http(config);
+    };
+
     return function(rejection) {
-	//console.log(rejection);
-        /*if (!authentication.existingSession()) {
+        if (!authentication.existingSession()) {
 	       return logout(rejection);
-	       }*/
-	if (!refreshPromise) {
-            refreshPromise = authentication.getRefreshCookie();
-	    clearPromise();
-	    //logout();
 	}
+	
+	if (!refreshPromise) {
+            refreshPromise = authentication.getRefreshCookie()
+		.then(clearPromise())
+		.catch(logout());
+	}
+
+	return refreshPromise
+	    .then(function() {
+		    recall(rejection)
+			.catch(function() {
+				Promise.reject(rejection);
+			    })
+			});
     };
 }

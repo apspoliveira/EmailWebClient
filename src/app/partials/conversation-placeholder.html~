@@ -1,0 +1,18 @@
+<section>
+    <div id="pm_latest" class="conversationPlaceholder">
+        <header>Welcome</header>
+        <section id="storageStatus">
+            <div class="wrap">
+                <placeholder-progress></placeholder-progress>
+            </div>
+        </section>
+        <section>
+          <a ui-sref="secured.dashboard({scroll: true})" class="text-center latest-upgrade">
+            <button type="button" class="pm_button primary">Upgrade account</button>
+          </a>
+        </section>
+    </div>
+</div>
+
+<count-elements-selected id="pm_placeholder"></count-elements-selected>
+</section>

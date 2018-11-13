@@ -1,44 +1,85 @@
 angular.module('webmail.commons')
     .factory('address', address);
 function address($http, url, $location, $q) { 
-	
-    //console.log(url);
+    
+    const I18N = {
+        ERROR_UPDATE: 'Error during updating',
+        ERROR_ORDER: 'Unable to save your changes, please try again.',
+        ERROR_DELETE: 'Error during deletion',
+        ERROR_DISABLE: 'Error during disable request',
+        ERROR_ENABLE: 'Error during enable request',
+        ERROR_CREATE: 'Address creation failed',
+        ERROR_QUERY: 'Error during query addresses',
+        ERROR_GET: 'Error during get address'
+    };
+       
     const requestUrl = url.build('addresses');
 
+    /**                                                                                                  
+     * Add an address to a domain, returns {address_id} if successful, group address limit and usage          * @param {Object} address                                                                        
+     * @return {Promise}                                                                                
+     */
+    const create = function(address) {
+        return $http.post(requestUrl, address);
+    };
+
     /**                                                                                     
-     * Add an address to a domain, returns {address_id} if successful, group address limit and usage                                                                                           
+     * Add an address to a domain, returns {address_id} if successful, group address limit and usage  
      * @param {Object} address                                                                 
      * @return {Promise}                                                                       
      */
     const setup = function(params) {
-	//console.log('setup');
-	//console.log(requestUrl);
-	//console.log(params);
-	//console.log(url.build('loginForm'));
-	//console.log($http.defaults);
-	//console.log(params); 
-	
-	$http.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+	return $http.post(url.build('addresses/setup'), params);
+    };
 
-	//console.log($http.defaults);
+    /**                                                                                               
+     * edit address                                                                                  
+     * @param {String} addressID                                                                    
+     * @param {Object} params                                                                       
+     * @return {Promise}                                                                            
+     */
+    const edit = function(addressID, params) {
+        return $http.put(url.build('addresses/'+addressID), params);
+    };
 
-	$http.post(url.build('setup'));
-	//requestUrl('setup'))/*, params)*/;
+    /**                                                                                               
+     * Enable address                                                                                
+     * @param {String} addressID                                                                   
+     * @return {Promise}                                                                            
+     */
+    const enable = function(addressID) {
+        return $http.put(url.build('addresses/'+addressID), 'enable');
+    };
 
-	//method = 'POST';
-	//path = 'index.html#!/loginForm';
-	/*$http({method: method, url: path}).then(function(response) {
-		$location.url('/loginForm');
-		//data = response.data;
-		//console.log(data);
-		});*/
-	
-	/*$http.post(path, {}, {
-		transformRequest: angular.identity,
-		headers: {
-		    'Content-Type': false 
-			}
-			});*/
-    }; 
-    return { setup }; 
+    /**                                                                                            
+     * Disable address                                                                              
+     * @param {String} addressID                                                                  
+     * @return {Promise}                                                                           
+     */
+    const disable = function(addressID) {
+        return $http.put(url.build('addresses/'+addressID), 'disable');
+    };
+
+    /**                                                                                             
+     * Delete an address (alias), returns group address limit and usage                             
+     * @param {String} addressID                                                                     
+     * @return {Promise}                                                                             
+     */
+    const remove = function(addressID) {
+        return $http.delete(url.build('addresses/'+addressID));
+    };
+
+    const order = function(params) {
+        return $http.put(url.build('addesses/order'), params);
+    };
+
+    const query = function() {
+	$http.get(requestUrl);
+    }
+
+    const get = function(addressID) {
+	$http.get(url.build('addresses/'+addressID));
+    }
+
+    return { create, setup, edit, enable, disable, remove, order, query, get }; 
 }

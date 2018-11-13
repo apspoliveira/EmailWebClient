@@ -1,8 +1,5 @@
 <div 
-    class="signupCreationProcess-container" 
-    ng-class="{
-        'signupCreationProcess-error': signupError 
-    }">
+    class="signupCreationProcess-container">
 
     <header class="text-center">
         <div class="creating-loader-container">
@@ -12,7 +9,7 @@
         <h2 class="text-center signupCreationProcess-error-title">Sign up failed</h2>
     </header>
 
-    <p class="signupCreationProcess-error-msg"><span>An error occured while trying to create your account. To see common probelms and solutions</span> <a target="_blank" href="https://protonmail.com/support/knowledge-base/common-sign-up-problems-and-solutions/">click here</a>.</p>
+    <p class="signupCreationProcess-error-msg"><span>An error occured while trying to create your account. To see common problems and solutions</span> <a target="_blank" href="https://protonmail.com/support/knowledge-base/common-sign-up-problems-and-solutions/">click here</a>.</p>
 
     <div class="text-left">
         <ol id="creationList">

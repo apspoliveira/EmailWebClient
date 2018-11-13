@@ -1,0 +1,33 @@
+<div class="dropdown-folder-container">
+    <div class="dropdown-folder-title">
+        <p>Move to</p>
+    </div>
+    <label class="dropdown-folder-search">
+        <i class="fa fa-search dropdown-folder-search-icon"></i>
+        <input 
+            class="dropdown-folder-search-input" 
+            type="search"  
+            ng-model="searchValue" 
+            ng-minlength="1">
+    </label>
+    <div class="dropdown-folder-fullwidth scrollbox-container">
+        <ul class="scrollbox-container-group">
+            <li 
+                class="dropdown-folder-scrollbox-group-item"
+                ng-repeat="label in (filteredLabels = (labels | filter: {Name: searchValue} | orderBy: 'Order')) track by label.ID">
+                <button class="dropdown-folder-scrollbox-group-item-button" data-folder-id="{{ ::label.ID }}">
+                    <div>
+                        <i class="fa dropdown-folder-scrollbox-group-item-icon"></i>
+                        <span class="ellipsis">{{ ::label.Name }}</span>
+                    </div>
+                </button>
+            </li>
+            <li 
+               class="scrollbox-container-group-item-empty">no folder found</li>
+        </ul>
+    </div>
+    <div class="dropdown-folder-create">
+        <button 
+            class="dropdown-folder-create-button">Create a new folder</button>
+    </div>
+</div>

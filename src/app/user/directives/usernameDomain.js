@@ -1,14 +1,4 @@
-'use strict';
-
 angular.module('webmail.user')
-
-    .config(['$routeProvider', function($routeProvider) {
-                $routeProvider.when('/usernameDomain', {
-                        templateUrl: 'user/directives/usernameDomain.html',
-                            controller: 'UsernameDomainController'
-                            });
-            }])
-
     .controller('UsernameDomainController', ['$rootScope', '$scope', function($rootScope, $scope) {
 
 		$scope.domains = [{
@@ -19,7 +9,7 @@ angular.module('webmail.user')
 			label: 'Yahoo Mail' 
 		    }, {
 			value: 3, 
-			label: 'ProtonMail' 
+			label: 'protonmail.com' 
 		    }, {
 			value: 4, 
 			label: 'AOL Mail' 

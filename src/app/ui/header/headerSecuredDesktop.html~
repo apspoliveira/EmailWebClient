@@ -1,0 +1,6 @@
+<div class="headerSecuredDesktop-container">
+  <!--<logo class="headerSecuredDesktop-logo headerDesktop-logo"></logo>-->
+  <!--<search-form></search-form>-->
+  <!--<search-contact></search-contact>-->
+  <navigation></navigation>
+</div>

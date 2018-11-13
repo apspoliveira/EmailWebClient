@@ -1,0 +1,8 @@
+angular.module('webmail.composer')
+    .directive('composerSelectFrom', composerSelectFrom);
+function composerSelectFrom () 
+{
+    return {
+	templateUrl: 'composer/directives/composerSelectFrom.html'
+    }
+}

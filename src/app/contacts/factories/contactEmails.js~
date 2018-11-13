@@ -1,0 +1,28 @@
+angular.module('webmail.contact')
+    .factory('contactEmails', contactEmails);
+function contactEmails(Contact) {
+    const emails = [];
+    
+    const set = function(data) {
+	emails.push(data);
+    }
+
+    /**                                                                                             
+     * Load first 100 emails via the user auth process                                               
+     * @return {Promise}                                                                               
+     */
+    const loadCache = function () {
+        const list = Contact.hydrate();
+        set(list);
+        return fetch();
+    };
+
+    const fetch = function() {
+	emails;
+    }
+
+    return { load: loadCache,
+	fetch
+	    };
+
+}

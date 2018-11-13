@@ -1,15 +1,8 @@
 angular.module('webmail.authentication')
     .factory('handle10003', handle10003);
-function handle10003(/*abuseFraudModal*/) {
+function handle10003() {
     return function (data) {
-        if (data.Code /*=== ERROR_AUTH_ACCOUNT_DISABLED*/) {
-	/*abuseFraudModal.activate({
-		    params: {
-			close() {
-			    abuseFraudModal.deactivate();
-			}
-		    }
-		    });*/
+        if (data.Code) {
         }
     };
 }

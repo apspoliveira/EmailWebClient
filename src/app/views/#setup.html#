@@ -1,0 +1,57 @@
+<p>&nbsp;</p>
+<div class="pm_panel wide">
+  <div class="text-center header">
+    <h2>
+      <i class="fa fa-user"></i>
+      <span translate translate-context="Title">Set up your account</span>
+    </h2>
+  </div>
+  <form method="post" ng-submit="setup.$valid && submit(setup)" name="setup" role="form" class="pm_form">
+    <div class="wrapper margin">
+      <div>
+        <label class="titleLabel" for="Username">
+          <em class="num">1</em>
+          <span>Email Address</span>
+        </label>
+        <div class="usernameWrap">
+          <p class="help">This will be your new email address.</p>
+          <strong ng-bind="username"></strong>
+          <em class="usernameDomain">@</em>
+          <span class="pm_select inline bigger">
+            <select class="selectDomain" ng-model="domain" ng-options="domain.label for domain in domains"></select>
+            <i class="fa fa-angle-down"></i>
+          </span>
+        </div>
+      </div>
+      
+      <div>
+        <label class="titleLabel" for="password">
+          <em class="num">2</em>
+          <span>Password</span>
+        </label>
+        <p class="help">This is used to encrypt and decrypt 
+          your messages. Do not lose this password--we cannot recover it.
+        </p>
+        <input
+           class="loginSetup-field-password" 
+           data-id="password" 
+           data-name="password" 
+           data-value="password"  
+	   ng-model="password">
+        data-form="setup"></password>
+<input
+   class="loginSetup-field-password" 
+   data-id="passwordc" 
+	     data-name="passwordc" 
+	     data-value="passwordConfirm"
+	     ng-model="password"
+             data-compare="password"  
+             data-form="setup"></password>
+
+         <p>&nbsp;</p>
+         </div><!--/.wrapper-->
+         <div class="text-center">
+        <p><button type="submit" class="pm_button primary large">Setup Account</button></p>
+      </div>
+</form>
+</div>

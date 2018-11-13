@@ -1,0 +1,22 @@
+<span class="pm_button paginator paginator-container">
+  <a  
+     class="paginator-btn-previous">
+    <i class="fa fa-chevron-left"></i>
+  </a>
+  <span class="pull-left paginator-dropdown-list">
+    <a 
+       class="pm_trigger paginator-dropdown" 
+       dropdown>
+      <small>{{ ::page }}</small>
+      <i class="fa fa-angle-down"></i>
+    </a>
+    <span class="pm_dropdown right">
+      <a ng-repeat="p in pages track by p" data-value="{{:pp})" class="paginator-dropdown-item">
+        <em class="paginator-label">Page</em> {{ ::p }}
+      </a>
+    </span>
+  </span>
+  <a class="paginator-btn-next" 
+    <i class="fa fa-chevron-right"></i>
+  </a>
+</span>

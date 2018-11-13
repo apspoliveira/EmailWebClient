@@ -1,9 +1,7 @@
-'use strict';
+angular.module('webmail.ui')
 
-angular.module('ui.header', ['ngRoute'])
-
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/headerNoAuth', {
+    .config(['$routeProvider', function($routeProvider) {
+		$routeProvider.when('/headerNoAuth', {
     templateUrl: 'ui/header/headerNoAuth.html',
     controller: 'HeaderNoAuthController'
   });

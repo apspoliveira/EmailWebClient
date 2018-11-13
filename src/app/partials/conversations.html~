@@ -1,0 +1,10 @@
+<toolbar-desktop></toolbar-desktop>
+<!--<toolbar-mobile ng-if="mobileMode"></toolbar-mobile>-->
+
+<div id="wrapper">
+
+    <list-rows></list-rows>
+<!--    <list-mobile></list-mobile>-->
+
+    <div id="conversation-view" ui-view="view"></div>
+</div>

@@ -1,0 +1,29 @@
+{
+    "name": "emailwebclient",
+    "description": "Email Web Client for website.com",
+    "version": "0.0.0",
+    "homepage": "ttps://github.com/apspoliveira/EmailWebClient",
+    "license": "ISC", 
+    "private": true,
+    "dependencies": {
+        "angular": "1.7.2",
+        "angular-animate": "1.7.2",
+        "angular-mocks": "1.7.2",
+        "angular-resource": "1.7.2",
+        "angular-route": "1.7.2",
+        "angular-sanitize": "1.7.2",
+        "angular-cookies": "1.7.2",
+        "angular-messages": "1.7.2",
+        "angular-gettext": "2.3.10",
+        "angular-ical": "^1.1.0",
+        "angular-loader": "1.7.2",
+        "angular-ui-indeterminate": "^1.0.0",
+        "angular-ui-router": "^0.4.3",
+        "angular-vs-repeat": "^2.0.6",
+        "angular-notify": "2.0.2",
+        "bootstrap": "3.3.x",
+        "jquery": "3.2.x",
+	"openpgp": "^3.0.12",
+	"bcryptjs": "^2.4.3"
+    }
+}

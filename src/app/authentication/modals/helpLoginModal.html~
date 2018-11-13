@@ -1,12 +1,7 @@
 <div class="small">
   <div class="">
-    <button type="button" ng-click="ctrl.cancel()" class=""></button>
-    <button
-             class="loginForm-btn-help"
-             ng-click="helpLoginModal()"
-             type="button">Need help?</button>
 
-    <div class="modal-content">
+   <div class="modal-content">
       <div class="modal-header">
         <h3 class="modal-title">Help</h3>
       </div>
@@ -31,4 +26,4 @@
          class="pm_button"
          ng-click="ctrl.cancel()">Cancel</a>
     </div>
-  </div>
+ </div>

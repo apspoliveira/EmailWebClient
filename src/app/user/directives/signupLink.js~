@@ -1,0 +1,15 @@
+angular.module('webmail.user')
+    .directive('signupLink', signupLink);
+function signupLink() {
+    const I18N = {
+	forFree: 'Sign up for free',
+    default: '
+
+    const getI18n = () => ({
+	    forFree: gettextCatalog.getString('Sign up for free', null, 'Action'),
+        default: gettextCatalog.getString('Create Account', null, 'Action'),
+	    no: gettextCatalog.getString('No', null, 'Action')
+	});
+
+
+}

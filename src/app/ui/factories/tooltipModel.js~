@@ -1,0 +1,6 @@
+angular.module('webmail.ui')
+    .factory('tooltipModel', tooltipModel);
+function tooltipModel() {
+
+
+}

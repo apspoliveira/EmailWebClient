@@ -1,0 +1,23 @@
+<form class="autocompleteEmails-container" novalidate>
+  
+  <div class="autocompleteEmails-admin">
+    <autocomplete-emails-item 
+       class="autocompleteEmails-item"  
+       ng-repeat="email in emails track by email.$id"></autocomplete-emails-item>
+    
+    <div class="autocompleteEmails-field autocomplete-container">
+      <input 
+         id="autocomplete" 
+         name="autocomplete"
+         autofocus 
+         autocomplete="off" 
+         spellcheck="false" 
+         autocapitalize="off" 
+         class="autocompleteEmails-input">
+    </div>
+    
+  </div>
+  
+  <ul class="autocompleteEmails-autocomplete"></ul>
+  
+</form>

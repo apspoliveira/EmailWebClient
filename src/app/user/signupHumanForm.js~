@@ -1,14 +1,4 @@
-'use strict';
-
-angular.module('user.signupHumanForm', ['ngRoute'])
-
-    .config(['$routeProvider', function($routeProvider) {
-		$routeProvider.when('/signupHumanForm', {
-			templateUrl: 'user/signupHumanForm.html',
-			    controller: 'SignupHumanFormController'
-			    });
-	    }])
-
+angular.module('webmail.user')
     .controller('SignupHumanFormController', [function() {
 
 	    }])

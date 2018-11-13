@@ -1,0 +1,6 @@
+angular.module('webmail.authentication')
+    .factory('logoutManager', logoutManager);
+function logoutManager(authentication) {
+    
+
+}

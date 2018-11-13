@@ -1,0 +1,5 @@
+<!--<header-secured></header-secured>-->
+<div id="ptSidebar" ui-view="sidebar"></div>
+<div id="pm_main" ui-view="content"></div>
+<composer-message></composer-message>
+<mailto-handler></mailto-handler>

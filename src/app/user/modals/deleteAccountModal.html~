@@ -1,0 +1,35 @@
+<div class="pm_modal small {{ctrl.class}}" role="dialog" style="display: block;">
+    <form class="modal-dialog" name="deleteForm" ng-submit="ctrl.submit()" autocomplete="off" novalidate>
+        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" class="fa fa-times close"></button>
+        <div class="modal-content pm_form">
+            <div class="modal-header">
+              <h4 class="modal-title">Delete account</h4>
+            </div>
+            <div class="modal-body">
+              <p class="alert alert-warnng">
+                <strong>WARNING: DELETION IS PERMANET</strong><br />
+                    <span>If you wish to delete in order to combine this account with another one, do NOT delete your account. You need to instead follow</span> 
+              </p>
+
+                <div class="margin" ng-if="ctrl.isAdmin">
+                    <label>We are sorry to see you go!</label>
+                    <label>Please tell us why you are leaving:</label>
+                    <textarea ng-model="ctrl.feedback"></textarea>
+                </div>
+                <div class="margin">
+                  <label>Please provide an email address in case we need to contact you (optional):</label>
+                  <input type="email" ng-model="ctrl.email"/>
+                </div>
+                <div class="margin">
+                  <label>Enter your login password to confirm your identity:</label>
+                  <input type="password" ng-model="ctrl.password" required />
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="pm_button error pull-right">Delete</button>
+            <button type="button" class="pm_button" ng-click="ctrl.cancel()">Cancel</button>
+        </div>
+    </form>
+    <div class="modal-overlay"></div>
+</div>

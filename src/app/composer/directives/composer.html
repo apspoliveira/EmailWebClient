@@ -1,0 +1,102 @@
+<div class="composer animate composer-container" data-composer-id="{{::message.ID}}">
+  <div class="composer-dropzone-wrapper"></div>
+  
+  <composer-header></composer-header>
+  <composer-encrypt 
+     class="composerOptions-container composer-options-encryption" 
+     data-message="message"></composer-encrypt>
+  
+  <div class="meta composer-meta">
+    
+    <composer-input-meta 
+       data-model="message" 
+       data-label="To" 
+       data-key="ToList" 
+       class="row toRow composer-field-ToList"></composer-input-meta>
+    
+    <composer-input-meta 
+       data-model="message" 
+       data-label="CC" 
+       data-key="CCList"
+       class="row ccRow composer-field-CCList"></composer-input-meta>
+    
+    <composer-input-meta 
+       data-model="message"
+       data-label="BCC" 
+       data-key="BCCList" 
+       class="row bccRow composer-field-BCCList"></composer-input-meta>
+    
+    <composer-subject class="row subjectRow composer-field-Subject"></composer-subject>
+  </div>
+  <section class="flex composer-section" ng-form="composeForm{{$index}}">
+    <div class="composeEditor fill">
+      <composer-ask-embedded class="askEmbedding composer-askEmbedding"></composer-ask-embedded>
+      
+      <div 
+         class="dropzone composer-dropzone fill" 
+         composer-dropzone 
+         id="dropzone_message{{::message.ID}}"></div>
+
+     <squire
+        class="composer-editor"
+        data-message="message"
+        data-allow-embedded="true"
+        ng-click="attHide(message); message.autocompletesFocussed = false;">
+       ></squire>
+
+    </div>
+  </section>
+  <composer-attachments data-model="message"></composer-attachments>
+  
+  <footer>
+    <!-- needsClick is required to prevent fastClick (Safari Mobile click bug #4834) -->
+    <button class="pm_button composer-btn-attachment needsclick"
+            data-action-composer="::message" 
+            data-action-composer-type="addFile" 
+            pt-placement="top">
+      <i class="fa fa-paperclip">Add file</i>
+    </button>
+    
+    <button 
+       ng-disabled="message.disabledOthers() || message !== selected" 
+       pt-placement="top"  
+       ng-click="togglePanel(message, 'encrypt')">
+      <i class="fa fa-lock"></i>
+    </button>
+    
+    <button 
+       class="pm_button composer-btn-expiration" 
+       ng-disabled="message.disabledOthers() || message !== selected" 
+       pt-placement="top" 
+       ng-click="togglePanel(message, 'expiration')">
+      <i class="fa fa-hourglass-end"></i>
+    </button>
+    
+    <div class="pull-right">
+      <composer-time class="desktopOnly"></composer-time>
+      <button 
+         class="pm_button composer-btn-discard" 
+         ng-disabled="message.disabledDiscard()" 
+         ng-click="discard(message)"  
+         pt-placement="top">
+        <i class="fa fa-trash-o"></i>
+        <span>Discard</span>
+      </button>
+      
+      <button 
+         class="pm_button composer-btn-save" 
+         ng-click="save(message, true, false)" 
+         pt-tooltip-translate="Save" 
+         pt-placement="top">
+        <i class="fa fa-floppy-o"></i>
+        <span>Save</span>
+      </button>
+      <button 
+	 class="pm_button composer-btn-save"
+         ng-click="send(message)">
+	 <i class="fa fa-send"></i>
+	 <span>Send</span>
+      </button>
+    </div>
+  </footer>
+</div>

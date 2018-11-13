@@ -1,0 +1,6 @@
+angular.module('heroApp').component('heroDetail', {
+	template: '<span> {{$ctrl.hero.name}}</span>',
+	    bindings: {
+	    hero: '=' 
+		}
+    });

@@ -1,0 +1,6 @@
+<form 
+   name="composeForm" 
+   id="pm_composer">
+  composer.html
+  <composer></composer>
+</div>

@@ -1,0 +1,6 @@
+angular.module('webmail.conversation')
+    .directive('listMobile', listMobile);
+function listMobile() {
+    
+
+}

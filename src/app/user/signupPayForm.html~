@@ -60,13 +60,13 @@
                 <li class="signupPayForm-feature-visionary">20GB storage</li>
                 <li class="signupPayForm-feature-plus">Send up to 1000 messages per day</li>
                 <li class="signupPayForm-feature-visionary">No sending limits</li>
-                <li translate-context="Signup features">Labels and Custom Filters</li>
-                <li translate-context="Signup features">Send encrypted messages to external recipients</li>
-                <li translate-context="Signup features">Use your own domain (ex: thomas@anderson.com)</li>
+                <li>Labels and Custom Filters</li>
+                <li>Send encrypted messages to external recipients</li>
+                <li>Use your own domain (ex: thomas@anderson.com)</li>
                 <li class="signupPayForm-feature-plus">Up to 5 email aliases</li>
                 <li class="signupPayForm-feature-visionary">Up to 50 email aliases</li>
                 <li class="signupPayForm-feature-visionary">Support for up to 5 domains</li>
-                <li translate-context="Signup features">Priority Customer Support</li>
+                <li>Priority Customer Support</li>
                 <li class="signupPayForm-feature-visionary">Early access to new features</li>
                 <li class="signupPayForm-feature-visionary">Help pick new features through Visionary only polls</li>
             </ul>

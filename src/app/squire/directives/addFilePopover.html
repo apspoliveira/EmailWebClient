@@ -1,0 +1,44 @@
+<form   
+    novalidate 
+    data-squire-popover
+    data-action="insertImage" 
+    name="addFilePopover" 
+    ng-class="{'addFilePopover-allow-uri':allowDataUri, 'addFilePopover-allow-embedded':allowEmbedded}"
+    class="insertImage addFilePopover-container addFilePopover-hidden pm_form">
+
+    <fieldset class="addFilePopover-panel">
+        <legend class="addFilePopover-legend">Insert an Image</legend>
+
+        <div class="addFilePopover-field row">
+            <label for="url" class="addFilePopover-label">URL image</label>
+            <input 
+                type="url" 
+                name="url" 
+                autocomplete="off" 
+                class="addFilePopover-input-url"
+                ng-model="data.image">
+            <input 
+                class="addFilePopover-input-file" 
+                type="file" 
+                accept="image/*">
+        </div>
+    </fieldset>
+
+    <footer class="addFilePopover-footer">
+        <button 
+            type="button" 
+            name="addembedded" 
+            class="btn primary addFilePopover-btn-embedded" 
+            data-action-compose="::message" 
+            data-action-compose-type="addEmbedded" 
+            ng-class="{disabled: !canAddImage()}">Insert File</button>
+
+        <button 
+            class="btn primary addFilePopover-btn-uri" 
+            name="adduri">Insert File</button>
+
+        <button 
+            class="btn primary addFilePopover-btn-url" 
+            name="addurl">Insert URL</button>
+    </footer>
+</form>

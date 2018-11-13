@@ -1,8 +1,9 @@
-angular.module('webmail.commons.factories', ['ngRoute']);
-
+angular.module('webmail.commons')
+    .factory('AppModel', AppModel);
 function AppModel($rootScope) {
     const MODEL = {};
     function dispatch(type, data) { $rootScope.$emit('AppModel', { type, data }) };
+
     function set(key, value) {
 	const previous = MODEL[key];
 	MODEL[key] = value;

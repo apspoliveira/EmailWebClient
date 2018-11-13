@@ -1,6 +1,4 @@
-'use strict';
-
-angular.module('webmail.user.signupPayForm', ['ngRoute'])
+angular.module('webmail.user')
 
     .config(['$routeProvider', function($routeProvider) {
 		$routeProvider.when('/signupPayForm', {

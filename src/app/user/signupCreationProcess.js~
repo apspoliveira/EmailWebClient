@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('user.signupCreationProcess', ['ngRoute'])
+angular.module('webmail.user.signupCreationProcess', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {
 		$routeProvider.when('/signupCreationProcess', {

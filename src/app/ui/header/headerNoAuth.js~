@@ -1,6 +1,4 @@
-'use strict';
-
-angular.module('ui.header', ['ngRoute'])
+angular.module('webmail.ui')
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/headerNoAuth', {
@@ -12,7 +10,7 @@ angular.module('ui.header', ['ngRoute'])
 .controller('HeaderNoAuthController', [function() {
 
 }])
-.directive('loginForm', function() {
+.directive('headerNoAuth', function() {
    return {
        templateUrl: 'ui/header/headerNoAuth.html'
 	   }

@@ -20,5 +20,5 @@ function url() {
 	return make(key, get());
     };
 
-    return { build };
+    return { build, get, make };
 }

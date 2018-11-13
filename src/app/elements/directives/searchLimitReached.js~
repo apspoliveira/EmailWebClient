@@ -1,0 +1,7 @@
+angular.module('webmail.elements')
+    .directive('reachLimitReached', reachLimitReached);
+function reachLimitReached() {
+    return {
+	template: '<div class="searchLimit-container"></div>'
+    }
+}

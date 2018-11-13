@@ -1,4 +1,4 @@
-angular.module('webmail.core', [])
+angular.module('webmail.core')
     .factory('formatResponseInterceptor', formatResponseInterceptor);
 function formatResponseInterceptor($q) {
     return {

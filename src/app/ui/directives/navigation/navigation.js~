@@ -1,0 +1,7 @@
+angular.module('webmail.ui')
+    .directive('navigation', navigation);
+function navigation() {
+    return {
+	templateUrl: 'ui/navigation/navigation.html'
+    }
+}

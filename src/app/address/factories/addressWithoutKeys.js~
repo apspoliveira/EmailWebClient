@@ -1,0 +1,6 @@
+angular.module('webmail.address')
+    .factory('addressWithoutKeys', addressWithoutKeys);
+function addressWithoutKeys(authentication, addressesModel) {
+    
+
+}

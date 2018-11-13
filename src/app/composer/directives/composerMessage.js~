@@ -1,0 +1,7 @@
+angular.module('webmail.composer')
+    .directive('composerMessage', composerMessage);
+function composerMessage() {
+    return {
+	templateUrl: 'partials/composer.html'
+	    }
+}

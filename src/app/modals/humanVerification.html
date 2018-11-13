@@ -1,0 +1,26 @@
+<div class="pm_modal small very-important" role="dialog">
+    <form method="post" class="modal-dialog" ng-submit="ctrl.submit()" name="humanVerificationForm">
+        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" class="fa fa-times close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Human verification</h4>
+            </div>
+            <div class="modal-body pm_form">
+                <p class="alert alert-info">For security reasons, please verify that you are not a robot.</p>
+                <div>
+                    <label>
+                        <custom-radio data-custom-ng-model="ctrl.verificator" data-custom-value="captcha"></custom-radio>
+                        <span>Captcha</span>
+                    </label>
+                </div>
+            </div>
+            <captcha-view data-token="{{ ::ctrl.token }}"></captcha-view>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="pm_button" ng-click="ctrl.cancel()">Cancel</button>
+        <button type="submit" ng-disabled="!ctrl.tokens[ctrl.verificator]" class="pm_button primary pull-right">Submit</button>
+    </div>
+    </form>
+    <div class="modal-overlay"></div>
+</div>
