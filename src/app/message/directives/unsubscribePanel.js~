@@ -1,6 +1,0 @@
-angular.module('webmail.message', [])
-    .directive('unsubscribePanel', unsubscribePanel);
-function unsubscribePanel() {
-
-
-}

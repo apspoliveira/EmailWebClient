@@ -1,4 +1,4 @@
-angular.module('webmail.user')
+angular.module('webmail')
     .factory('signupUserProcess', signupUserProcess);
 function signupUserProcess($rootScope, signupModel, address, authentication, srp) {
     const CACHE = {};
@@ -46,7 +46,7 @@ function signupUserProcess($rootScope, signupModel, address, authentication, srp
 		    })
 	    .then(function (data) {
 		    authentication.receivedCredentials(data);
-		    console.log(data);
+		    
 		    authentication.setAuthCookie(data);
 		    return authentication.fetchUserInfo();
 	    })
@@ -80,9 +80,9 @@ function signupUserProcess($rootScope, signupModel, address, authentication, srp
 
     function createAddress() {
 	try {
-	    console.log(authentication);
+	   
 	    doLogUserIn();
-	    console.log(authentication);
+	   
 	    /*.then(*/doAccountSetup()/*)*/;
 	} catch (e) {
 	    const data = e;

@@ -1,4 +1,4 @@
-angular.module('webmail.ui')
+angular.module('webmail')
     .directive('headerSecured', headerSecured);
 function headerSecured() {
     return {

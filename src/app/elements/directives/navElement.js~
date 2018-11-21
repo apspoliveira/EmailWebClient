@@ -1,9 +1,0 @@
-angular.module('webmail.elements')
-    .directive('navElements', navElements);
-function navElements() {
-
-    return {
-        replace: true,
-	    templateUrl: 'templates/elements/navElements.html'
-	    }
-}

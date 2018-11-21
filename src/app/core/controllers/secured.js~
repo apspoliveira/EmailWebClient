@@ -1,6 +1,6 @@
 angular.module('webmail.core')
     .controller('SecuredController', SecuredController);
-function SecuredController($rootScope, $scope, $state, /*$http,*/ authentication, cacheCounters, resurrecter, secureSessionStorage, userType) {
+function SecuredController($rootScope, $scope, $state, authentication, cacheCounters, contactCache, resurrecter, secureSessionStorage, userType) {
     console.log('Secured Controller');
     
     function initialization() { 
@@ -16,10 +16,7 @@ function SecuredController($rootScope, $scope, $state, /*$http,*/ authentication
 	console.log(secureSessionStorage.getItem(OAUTH_KEY + ':SessionToken'));
 	
 	if (uid) {
-	    //$http.defaults.headers.common['x-pm-uid'] = uid;
 	} else if (angular.isDefined(secureSessionStorage.getItem(OAUTH_KEY + ':SessionToken'))) {
-	    //$http.defaults.headers.common['x-pm-uid'] = pmcrypto.decode_base64(secureSessionStorage.getItem(OAUTH_KEY + ':SessionToken') || '');
-	    // secureSessionStorage.setItem(OAUTH_KEY + ':UID', $http.defaults.headers.common['x-pm-uid']);
 	    secureSessionStorage.removeItem(OAUTH_KEY + ':SessionToken');      
 	}
 	
@@ -39,17 +36,12 @@ function SecuredController($rootScope, $scope, $state, /*$http,*/ authentication
         $scope.isFree = isFree;
     };
     
-    $rootScope.isLoggedIn = true; // Shouldn't be there                                            
-    $rootScope.isLocked = false; // Shouldn't be there
-    
-    resurrecter.init();
     const bindAppValue = function(key, value) {
 	$scope.$applyAsync(function() {
 		$scope[key] = value;
 	    })
     };
-    
-    // Initialize counters for conversation (total and unread)                                 
+                                    
     console.log(cacheCounters.query());
     
     $scope.idDefined = function() {
@@ -58,9 +50,6 @@ function SecuredController($rootScope, $scope, $state, /*$http,*/ authentication
     $scope.isMobile = function() {
 	
     }
-    $scope.$on('$destroy', function() {
-      
-	});
     
     initialization();
 }

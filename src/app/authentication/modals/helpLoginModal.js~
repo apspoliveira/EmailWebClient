@@ -1,7 +1,0 @@
-angular.module('webmail.authentication')
-.directive('helpLoginModal', function() {
-            return {
-                templateUrl: 'authentication/modals/helpLoginModal.html'
-                    }
-        });
-

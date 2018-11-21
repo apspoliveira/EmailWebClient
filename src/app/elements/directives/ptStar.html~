@@ -1,4 +1,0 @@
-<div class="starButton" ng-class="isStarred() ? 'starButton-starred': ''">
-    <a class="starButton-unstar fa fa-star"></a>
-    <a class="starButton-star fa fa-star-o"></a>
-</div>

@@ -1,6 +1,0 @@
-angular.module('webmail.sidebar')
-    .directive('menuLabel', menuLabel);
-function menuLabel() {
-
-
-}

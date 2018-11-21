@@ -1,6 +1,0 @@
-angular.module('webmail.message')
-    .directive('actionMessage', actionMessage);
-function actionMessage() {
-
-
-}

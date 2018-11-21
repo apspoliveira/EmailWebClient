@@ -1,41 +1,32 @@
 <div>
-  <div class="text-center">  
-    <img class="signupUserForm-header-logo" src="/assets/img/logo/nexus-s.0.jpg" height="34" />
-    <h2 class="signupUserForm-header-title">
-      <span>Create your account</span>
+  <div class="text-center">
+    <h2>
+      <span>Create an account</span>
     </h2>
   </div>
   
   <form 
      method="post" 
-     name="accountForm"
-     class="signupUserForm-container"
-     action="login">
+     name="accountForm">
     
-    <username-domain> 
-      data-step="1"
-      data-form="accountForm"
-      name="username"
-      id="username"
-      ng-model="username">
+    <username-domain 
+       name="username"
+       id="username"
+       ng-model="username">
     </username-domain>
     
     <username-password 
-       data-step="2" 
-       data-form="accountForm" 
        ng-model="password"
        name="password"
        id="password">
-       </username-password>
+    </username-password>
     
     <br />
     
-    <section class="notificationEmail-container" data-step="3">
+    <section class="notificationEmail-container">
       <label class="titleLabel">
         <span>Notification email</span>
       </label>
-      
-      <p class="help">This is used to recover your account if you get locked out or forget your password.</p>
       
       <input 
          type="email" 
@@ -44,20 +35,8 @@
          ng-model="notificationEmail" 
          class="form-control">
       
-      <div ng-messages="accountForm.notificationEmail.$error" class="signUpProcess-error.recoveryEmail">
-	<p ng-message="email" class="text-red">Email invalid</p>
-	<p ng-message="validUsername" class="text-red">Recovery email invalid</p>
-      </div>
-      
     </section>
     <br />
     
-    <div class="signupUserForm-actions">
-      
-      <button
-	 class="signUpProcess-btn-create"
-	 ng-click="updateAccount()"
-	 type="button">Create Account</button>
-    </div>
   </form>
 </div>

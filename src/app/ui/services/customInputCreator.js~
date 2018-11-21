@@ -1,6 +1,0 @@
-angular.module('webmail.ui')
-    .factory('customInputCreator', customInputCreator);
-function customInputCreator() {
-
-
-}

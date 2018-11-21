@@ -1,1 +1,0 @@
-angular.module('webmail.elements', [/*'webmail.commons', 'webmail.conversation'*/]);

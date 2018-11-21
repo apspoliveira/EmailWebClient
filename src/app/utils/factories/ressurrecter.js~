@@ -1,5 +1,0 @@
-angular.module('webmail.utils')
-    .factory('resurrecter', ressurrecter);
-function ressurrecter() {
-
-}

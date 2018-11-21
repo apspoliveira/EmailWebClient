@@ -1,4 +1,4 @@
-angular.module('webmail.commons', [])
+angular.module('webmail')
     .factory('webcrypto', webcrypto);
 function webcrypto() {
     if (window.crypto && window.crypto.getRandomValues) {

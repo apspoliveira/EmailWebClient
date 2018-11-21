@@ -1,85 +1,11 @@
-angular.module('webmail.commons')
+angular.module('webmail')
     .factory('address', address);
-function address($http, url, /*$location,*/ $q) { 
+function address($http) { 
     
-    const I18N = {
-        ERROR_UPDATE: 'Error during updating',
-        ERROR_ORDER: 'Unable to save your changes, please try again.',
-        ERROR_DELETE: 'Error during deletion',
-        ERROR_DISABLE: 'Error during disable request',
-        ERROR_ENABLE: 'Error during enable request',
-        ERROR_CREATE: 'Address creation failed',
-        ERROR_QUERY: 'Error during query addresses',
-        ERROR_GET: 'Error during get address'
-    };
-       
-    const requestUrl = url.build('addresses');
-
-    /**                                                                                                  
-     * Add an address to a domain, returns {address_id} if successful, group address limit and usage          * @param {Object} address                                                                        
-     * @return {Promise}                                                                                
-     */
-    const create = function(address) {
-        return $http.post(requestUrl, address);
-    };
-
-    /**                                                                                     
-     * Add an address to a domain, returns {address_id} if successful, group address limit and usage  
-     * @param {Object} address                                                                 
-     * @return {Promise}                                                                       
-     */
+    // Param - Domain
     const setup = function(params) {
-	return $http.post(url.build('addresses/setup'), params);
+	return $http.post(API_ENDPOINT+'/addresses/setup', params);
     };
 
-    /**                                                                                               
-     * edit address                                                                                  
-     * @param {String} addressID                                                                    
-     * @param {Object} params                                                                       
-     * @return {Promise}                                                                            
-     */
-    const edit = function(addressID, params) {
-        return $http.put(url.build('addresses/'+addressID), params);
-    };
-
-    /**                                                                                               
-     * Enable address                                                                                
-     * @param {String} addressID                                                                   
-     * @return {Promise}                                                                            
-     */
-    const enable = function(addressID) {
-        return $http.put(url.build('addresses/'+addressID), 'enable');
-    };
-
-    /**                                                                                            
-     * Disable address                                                                              
-     * @param {String} addressID                                                                  
-     * @return {Promise}                                                                           
-     */
-    const disable = function(addressID) {
-        return $http.put(url.build('addresses/'+addressID), 'disable');
-    };
-
-    /**                                                                                             
-     * Delete an address (alias), returns group address limit and usage                             
-     * @param {String} addressID                                                                     
-     * @return {Promise}                                                                             
-     */
-    const remove = function(addressID) {
-        return $http.delete(url.build('addresses/'+addressID));
-    };
-
-    const order = function(params) {
-        return $http.put(url.build('addesses/order'), params);
-    };
-
-    const query = function() {
-	$http.get(requestUrl);
-    }
-
-    const get = function(addressID) {
-	$http.get(url.build('addresses/'+addressID));
-    }
-
-    return { create, setup, edit, enable, disable, remove, order, query, get }; 
+    return { setup }; 
 }

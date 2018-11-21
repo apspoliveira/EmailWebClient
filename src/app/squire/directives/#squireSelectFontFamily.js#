@@ -1,7 +1,0 @@
-angular.module('webmail.squire')
-    .directive('sselectFontFamily', selectFontFamily);
-function selectFontFamily() {
-    return {
-	templateUrl: 'squire/directives/squireSelectFontFamily.html'
-    }
-}

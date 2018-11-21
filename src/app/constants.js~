@@ -55,7 +55,7 @@ const SEND_TYPES = {
     SEND_MIME: 32
 };
 
-export const ADDRESS_TYPE = {
+const ADDRESS_TYPE = {
     ORIGINAL: 1,
     ALIAS: 2,
     CUSTOM_DOMAIN: 3,

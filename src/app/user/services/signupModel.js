@@ -1,11 +1,8 @@
-angular.module('webmail.user')
+angular.module('webmail')
     .factory('signupModel', signupModel);
 
-function signupModel(User, $stateParams, $location, $rootScope) {
+function signupModel(User, $rootScope) {
     const CACHE = {};
-    const dispatch = function(type, data) {
-	$rootScope.$emit('signup', { type, data });
-    }
 
     const get = function (key) {
         const item = angular.copy(CACHE['model']);
@@ -30,70 +27,27 @@ function signupModel(User, $stateParams, $location, $rootScope) {
         return login.password;
     };
 
-    const getOptionsVerification = function(Type) {
-	if (CACHE.humanCheck) {
-            return Promise.resolve(CACHE.humanCheck);
-        }
-
-	if ($stateParams.inviteToken) {
-            return Promise.resolve({ invitation: true });
-        }
-	
-	return User.direct(Type)
-	.then(function(data) {
-		if (data.Direct === 1) {
-                    return (CACHE.humanCheck = {
-			    email: _.includes(data.VerifyMethods, 'email'),
-			    captcha: _.includes(data.VerifyMethods, 'captcha'),
-			    sms: _.includes(data.VerifyMethods, 'sms')
-			});
-                }
-		
-		console.log(data);
-		return data;
-            })
-	.catch(function(err) {
-                const data = err;
-
-                if (data.Error) {
-                    throw new Error(data.Error);
-		}
-
-                throw err;
-	    });
-    }
-
     const createUser = function(model) {
 	
-	console.log(model);
-
 	const params = {
             Username: get('username'),
             Email: get('notificationEmail'),
-	    Type: get('Type'),
-	    Referrer: $location.search().ref
+	    Type: get('Type')
         };
-
-	if (model.smsCodeVerification != "") {
-	    params.Token = model.smsCodeVerification; // 423474    
-	    params.TokenType = 'sms';
-	}
-	else if (model.codeVerification != "") {
-	    params.Token = model.codeVerification; //084826
-	    params.TokenType = 'email'; // apspoliveiraipn@gmail.com
-	}
 	
-      	User.check({ Token: params.Token, TokenType: params.TokenType });
+	if (model.smsCodeVerification != "") {
+	    params.Token = model.smsCodeVerification; 
+	    params.TokenType = 'sms';
+	} 
+	else /*if (model.codeVerification != "") */ {
+	    params.Token = 111111; //model.codeVerification;
+	    params.TokenType = 'email';
+	};
 	
 	User.available(params.Username).then(function(data) {
-	       
-		if (data.data.Status == 0) {
-		    User.create(params, getPassword());
-		}
-		else
-		    throw new Error('Username not available');
-	    });
+	    console.log(User.create(params, getPassword()));
+	});
     }
-
-    return { get, set, store, getDomain, getPassword,  getOptionsVerification, createUser }; 
+    
+    return { get, set, store, getDomain, getPassword, createUser }; 
 }

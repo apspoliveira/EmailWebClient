@@ -1,6 +1,6 @@
-angular.module('webmail.commons')
+angular.module('webmail')
     .factory('address', address);
-function address($http, url, $location, $q) { 
+function address($http) { 
     
     const I18N = {
         ERROR_UPDATE: 'Error during updating',

@@ -1,6 +1,0 @@
-angular.module('webmail.sidebar')
-    .directive('navigationItem', navigationItem);
-function navigationItem() {
-    
-
-}

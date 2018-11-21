@@ -1,4 +1,0 @@
-angular.module('webmail.paginator', [])
-    .directive('paginator', paginator);
-function paginator() {
-}

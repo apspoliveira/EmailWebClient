@@ -1,9 +1,7 @@
-angular.module('webmail.composer')
+angular.module('webmail')
     .directive('composerMessage', composerMessage);
 function composerMessage() {
     return {
-	replace: true,
-	    scope: {},
 	    templateUrl: 'partials/composer.html',
 	    controller: 'ComposeMessageController'
 	    }

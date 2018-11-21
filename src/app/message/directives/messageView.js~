@@ -1,7 +1,0 @@
-angular.module('webmail.message')
-    .directive('messageView', messageView);
-function messageView() {
-    return {
-	templateUrl: 'message/directives/messageView.html'
-	    }
-}

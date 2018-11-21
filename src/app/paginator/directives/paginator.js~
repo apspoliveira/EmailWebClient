@@ -1,7 +1,0 @@
-angular.module('webmail.paginator')
-    .directive('paginator', paginator);
-function paginator() {
-    return {
-	    templateUrl: 'paginator/directives/paginator.html'
-	    }
-}

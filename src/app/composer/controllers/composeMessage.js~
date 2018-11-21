@@ -115,7 +115,7 @@ function ComposeMessageController($scope, $timeout, authentication, composerRequ
 	
 	dispatchMessageAction(message);
 	
-	message.setDecryptedBody(msg.getDecryptedBody(), false);
+	message.setDecryptedBody(msg/*.getDecryptedBody()*/, false);
 
 	sendMessage(message);
     }

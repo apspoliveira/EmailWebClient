@@ -1,7 +1,0 @@
-angular.module('webmail.composer')
-    .directive('composerExpiration', composerExpiration);
-function composerExpiration() {
-    return {
-	templateUrl: 'composer/directives/composerExpiration.html'
-    }
-}

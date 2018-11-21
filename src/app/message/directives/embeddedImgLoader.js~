@@ -1,6 +1,0 @@
-angular.module('webmail.message')
-    .directive('embeddedImgLoader', embeddedImgLoader);
-function embeddedImgLoader() {
-
-
-}

@@ -1,6 +1,0 @@
-angular.module('webmail.composer')
-    .directive('composerContainer', composerContainer);
-function composerContainer() {
-
-
-}

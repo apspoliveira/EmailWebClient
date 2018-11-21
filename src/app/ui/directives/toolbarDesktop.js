@@ -1,19 +1,10 @@
-angular.module('webmail.ui')
+angular.module('webmail')
     .directive('toolbarDesktop', toolbarDesktop);
-function toolbarDesktop(mailSettingsModel) {
+function toolbarDesktop() {
     return {
 	replace: true,
-	    templateUrl: 'ui/toolbarDesktop.html',
+	    templateUrl: 'ui/directives/toolbarDesktop.html',
 	    link(scope) {
-	    
-	    const updateView = function() {
-                const ViewLayout = mailSettingsModel.get();
-                scope.$applyAsync(function() {
-			scope.viewLayout = ViewLayout;
-		    });
-            };
-	    
-	    updateView();
 	}
     }
 }

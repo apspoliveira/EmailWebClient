@@ -1,9 +1,0 @@
-angular.module('webmail.user')
-    .controller('SignupHumanFormController', [function() {
-
-	    }])
-    .directive('signupHumanForm', function() {
-            return {
-                templateUrl: 'user/signupHumanForm.html'
-                    }
-        });

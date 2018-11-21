@@ -1,7 +1,0 @@
-angular.module('webmail.sidebar')
-    .factory('sidebarModel', sidebarModel);
-function sidebarModel () {
-
-
-
-}

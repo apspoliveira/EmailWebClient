@@ -5,36 +5,25 @@
     </a>
   </span>
   <elements-selector class="toolbar-select-all"></elements-selector>
-  <read-unread></read-unread>
-  <move-element></move-element>
   <span class="pm_buttons">
     <div class="pm_buttons">
       <a 
-         class="pm_trigger open-folder" 
-         dropdown>open-folder
+         class="pm_trigger open-folder">open-folder
         <i class="fa fa-folder"></i>
         <i class="fa fa-angle-down"></i>
       </a>
-      <div class="pm_dropdown wide">
-        <dropdown-folders data-elements="getElements"></dropdown-folders>
-      </div>
     </div>
     <div id="tour-label-dropdown" class="pm_buttons">
       <a 
-         class="pm_trigger open-label" 
-         dropdown >open-label
+         class="pm_trigger open-label">open-label
         <i class="fa fa-tag"></i>
         <i class="fa fa-angle-down"></i>
       </a>
-      <div class="pm_dropdown wide">
-        <dropdown-labels message="getElements" save="saveLabels"></dropdown-labels>
-      </div>
     </div>
   </span>
-    <advanced-filter-element></advanced-filter-element>
     
-    <div class="pull-right action toolbarDesktop-actions-right">
-      <nav-elements></nav-elements>
-    </div>
+  <div class="pull-right action toolbarDesktop-actions-right">
+    <nav-elements></nav-elements>
+  </div>
 </div>
 </nav>

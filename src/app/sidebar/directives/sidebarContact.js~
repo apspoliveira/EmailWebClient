@@ -1,7 +1,0 @@
-angular.module('webmail.sidebar')
-    .directive('sidebarContact', sidebarContact);
-function sidebarContact() {
-    return {
-	templateUrl: 'sidebar/directives/sidebarContact.html'
-    }
-}

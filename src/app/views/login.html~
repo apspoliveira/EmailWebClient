@@ -1,10 +1,1 @@
 <login-form></login-form>
-<div class="text-center">
-    <a 
-        class="pm_button link login-btn-oldversion"  
-        href="https://old.protonmail.com/login" 
-        target="_self" 
-        translate-context="Action" 
-        translate-comment="link for old" 
-        translate>Having trouble? Try an older version</a>
-</div>

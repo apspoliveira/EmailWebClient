@@ -33,7 +33,6 @@ function humanVerification(User, $state, signupModel) {
 		    data.Code = 1000;
 		});
 
-	console.log(promise);
         return promise;
     };
 
@@ -63,7 +62,7 @@ function humanVerification(User, $state, signupModel) {
 	    const $formSMS = el.find(SELECTOR.FORM_SMS);
 	    const $formEMAIL = el.find(SELECTOR.FORM_EMAIL);
 	    const $btnSetup = el.find(SELECTOR.BTN_COMPLETE_SETUP);
-	    
+	        
 	    signupModel.getOptionsVerification(offerType).then(function({ email, captcha, sms, payment }) {
 		    scope.$applyAsync(function () {
 			    scope.showEmail = email;
@@ -73,11 +72,11 @@ function humanVerification(User, $state, signupModel) {
 			    scope.verificator = getVerificator(scope);
 			});
 		});
-	    
+	        
 	    //                                                                                                       // @TODO RFR each form => component + model and remove facepalm boolean                     
 	    //
             const onSubmitSMS = function(e) {
-	        e.stopPropagation();
+		e.stopPropagation();
                 e.preventDefault();
                 scope.$applyAsync(function() { 
 			scope.smsSending = true;
@@ -89,21 +88,19 @@ function humanVerification(User, $state, signupModel) {
 			scope.model.verificationSent = false;
 			scope.smsSending = false;
 		    });
-		    };
-	 
+	    };
+	     
 	    const onSubmitEmail = function(e) {
-		console.log('submit email');
 		e.stopPropagation();
                 e.preventDefault();
-		console.log(scope);
                 sendVerificationCode('email', scope.model.emailVerification).then(function(test) {
 			scope.model.verificationSent = test;
 			scope.model.smsVerificationSent = false;
 			signupModel.set('smsVerificationSent', false);
 			signupModel.set('verificationSent', test);
-			});
+		    });
 	    };
-	    
+	        
             $formSMS.on('submit', onSubmitSMS);
             $formEMAIL.on('submit', onSubmitEmail);
 

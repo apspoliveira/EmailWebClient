@@ -1,1 +1,0 @@
-angular.module('webmail.message', ['ngSanitize', 'webmail.squire']);

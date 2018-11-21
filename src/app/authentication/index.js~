@@ -1,1 +1,0 @@
-angular.module('webmail.authentication', ['webmail.utils', 'webmail.keys']);

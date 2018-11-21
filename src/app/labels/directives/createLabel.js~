@@ -1,4 +1,0 @@
-angular.module('webmail.labels')
-    .directive('createLabel', createLabel);
-function createLabel() {
-}

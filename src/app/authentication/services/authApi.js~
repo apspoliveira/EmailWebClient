@@ -1,59 +1,56 @@
-angular.module('webmail.authentication')
+angular.module('webmail')/*.authentication')*/
     .factory('authApi', authApi);
-authApi.$inject = ['$http', 'url'];
-function authApi($http, url) {
-    const requestURL = url.build('auth');
+function authApi($http/*, url*/) {
+    const requestURL = API_ENDPOINT;
     return {
 	/**                                                                                          
 	 * Authenticate                                                                                  
          * @param {Object} params                                                                        
          * @return {Promise}                                                                         
 	 */
-        authenticate(params) {
+        /*authenticate(params) {
             return $http.post(requestURL, params);
-	},
+	},*/
 	/**                                                                                
 	 * Refresh an expired token                                                       
 	 * @param {Object} params                                                      
 	 * @return {Promise}                                                               
 	 */
-	refresh(params) {
-	    console.log(params);
-	    return $http.post(url.build('auth/refresh'), params);
-	},
+	    /*refresh(params) {
+		return $http.post(url.build('auth/refresh'), params);
+	    },*/
 	    /**                                                                                        
 	     * Set secure cookies, web app only                                                         
 	     * @param {Object} params                                                                  
 	     * @return {Promise}                                                                       
 	     */
-	    cookies(params) {
+	/*cookies(params) {
 		return $http.post(url.build('auth/cookies'), params);
-	    },
+	    },*/
 		/**                                                                                              	  * Set up SRP authentication request                                                                      * @return {Promise}                                                                                      */
 	    info(params) {
-		console.log(params);
-		return $http.post(url.build('auth/info'), params);
-	    },
+		return $http.post(API_ENDPOINT+'/auth/info', params);
+	    }//,
 		
-	    revoke() {
+	    /*revoke() {
 	       return $http.delete(requestURL);
-	    },
+	    },*/
 		/**
 		 * Get active sessions 
 		 * @return {Promise}
 		 */
-		sessions() {
+		/*sessions() {
 		    return $http.get(url.build('auth/sessions'));
-		},
+		},*/
 	    /**                                                                                
 	     * @return {Promise}                                                                  
 	     */
-	    modulus() {
+	    /*modulus() {
 		return $http.get(url.build('auth/modulus'));
 	    },
 
 	    revokeOthers() {
 		return $http.delete(url.build('auth/others'));
-	     }
+	     }*/
     };
 }

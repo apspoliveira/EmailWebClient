@@ -1,7 +1,0 @@
-angular.module('webmail.message')
-    .directive('renderMessageBody', renderMessageBody);
-function renderMessageBody() {
-    
-
-
-}

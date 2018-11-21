@@ -1,5 +1,0 @@
-angular.module('webmail.composer')
-    .factory('extractDataURI', extractDataURI);
-function extractDataURI () {
-
-}

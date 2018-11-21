@@ -4,27 +4,27 @@
   </h4>
   <form 
      method="post"
-     name="loginForm"
-     class="loginForm-container" 
-     ng-submit="enterLoginPassword($event)"
-     action="#!/signup">
+     ng-submit="enterLoginPassword()"> <!-- ($event) -->
+    <!--   name="loginForm"
+	   class="loginForm-container" -->
+	 <!--  action="#!/signup">-->
     
     <label>Username <input type="text" ng-model="user.name"/></label><br />
     <label>Password <input type="password" ng-model="user.password" /></label><br />
     
-    <div class="loginForm-actions">
-      <div class="loginForm-actions-column">
-        <button 
-           id="login_btn" 
-           type="submit" 
-	   class="pull-right loginForm-btn-submit"
-           >Login</button>
-        <button 
-           class="loginForm-btn-help" 
-           ng-click="helpLoginModal()" 
-	   type="button"
-           type="button">Need help?</button>
-      </div>
+    <div> <!-- class="loginForm-actions">
+      <div class="loginForm-actions-column">-->
+      <button> 
+	           <!--id="login_btn" 
+		       type="submit" 
+		       class="pull-right loginForm-btn-submit">-->
+	Login</button>
+              <!--<button 
+		  class="loginForm-btn-help" 
+		  ng-click="helpLoginModal()" 
+		  type="button"
+		  type="button">Need help?</button>
+		  </div>-->
     </div>
   </form>
 </div>

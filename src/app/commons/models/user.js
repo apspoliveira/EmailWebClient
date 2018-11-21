@@ -1,49 +1,20 @@
-angular.module('webmail.commons')
+angular.module('webmail')
     .factory('User', User);
-function User($http, url, srp, authApi) {
+function User($http, srp, authApi) {
     const headersVersion3 = { 'x-pm-apiversion': 3 };
-    const requestURL = url.build('users');
     
     return {
+	// Params - Username, Email, Type, TokenType, Token, Version, ModulusID, Salt, Verifier
 	create(params, password) {
 	    return srp.getPasswordParams(password, params).then(function (data) {
-		    console.log(data);
-		    $http.post(requestURL, data);   
-		});
-	},
-	code(params) {
-	    return $http.post(url.build('users/code'), params);
+		$http.post(API_ENDPOINT+'/users', data);   
+	    });
 	},
 	get(params) {
-	    console.log($http.defaults.headers.common);
-	    return $http.get(requestURL, params);
+	    return $http.get(API_ENDPOINT, params);
 	},
-	human() {
-	    return $http.get(url.build('users/human'));
-	},
-	check(params) {
-	    return $http.put(url.build('users/check'), params);
-	},
-	pubkeys(emails) {
-	    return $http.get(url.build('users/pubkeys', window.encodeURIComponent(emails)));
-	},	
 	available(params) {
-	    return $http.get(url.build('users/available'), { params: { Name:  params  }} );
-	},
-	direct(params) {
-	    return $http.get(url.build('users/direct'), { params: params } );
-	},
-	lock() {
-	    return $http.put(url.build('users/lock'));
-	},
-	unlock(creds) {
-	    return srp.performSRPRequest('PUT', '/users/unlock', {}, creds);
-	},
-	password(creds) {
-	    return srp.performSRPRequest('PUT', '/users/password', {}, creds);
-	},
-	delete(creds) {
-	    return srp.performSRPRequest('PUT', '/users/delete', {}, creds);
+	    return $http.get(API_ENDPOINT+'/users/available', { params: { Name:  params  }});
 	}
     };
 }
