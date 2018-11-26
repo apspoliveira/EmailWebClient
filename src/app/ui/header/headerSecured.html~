@@ -1,4 +1,0 @@
-<header class="headerSecured-container headerDesktop-container">
-    <header-secured-desktop></header-secured-desktop>
-    <header-secured-mobile ng-if="mobileMode"></header-secured-mobile>
-</header>

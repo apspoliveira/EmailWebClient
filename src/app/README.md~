@@ -1,5 +1,4 @@
 # EmailWebClient
-Email Web Client using AngularJS
-Browsers: Safari, Chrome
-Email Service: ProtonMail
-Login or create an account 
+Development of Email Web Client for protonmail email service provider using AngularJS and other technologies. Our client also uses NodeJS, OpenPGPjs, Git, HTML and CSS.
+The client allows user account creation and login using SRP protocol. 
+Security is one of the important issues of this project.

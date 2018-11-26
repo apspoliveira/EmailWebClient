@@ -11,7 +11,6 @@
     <script src="node_modules/asmcrypto.js/asmcrypto.js"></script>
     <script src="bower_components/openpgp/dist/openpgp.js"></script>
     <script src="bower_components/bcryptjs/dist/bcrypt.js"></script>
-    <script src="node_modules/pmcrypto/dist/pmcrypto-browser.js"></script>
     <script src="app.js"></script>
     <script src="routes.js"></script>
     <script src="constants.js"></script>
@@ -23,36 +22,50 @@
     <script src="authentication/services/srp.js"></script>
     <script src="commons/models/user.js"></script> 
     <script src="commons/models/address.js"></script>
-    <!--<script src="composer/controllers/composeMessage.js"></script>
-	<script src="composer/directives/composerMessage.js"></script>-->
-    <!--<script src="conversation/factories/conversationApi.js"></script>-->
+    <script src="composer/controllers/composeMessage.js"></script>
+    <script src="composer/directives/composerMessage.js"></script>
+    <script src="conversation/factories/conversationApi.js"></script>
     <script src="core/controllers/signup.js"></script>
     <script src="core/controllers/setup.js"></script>
-		<!--<script src="core/controllers/secured.js"></script>-->
-    <!--<script src="elements/controllers/elements.js"></script>-->
-    <!--<script src="message/factories/messageApi.js"></script>
-	<script src="message/factories/messageModel.js"></script>-->
+    <script src="core/controllers/secured.js"></script>
+    <script src="elements/controllers/elements.js"></script>
+    <script src="message/directives/message.js"></script>
+    <script src="message/factories/messageApi.js"></script>
+    <script src="message/factories/messageModel.js"></script>
     <script src="ui/directives/toolbarDesktop.js"></script>
+    <script src="user/directives/addressesSelector.js"></script>
     <script src="user/directives/signupUserForm.js"></script>
-	<script src="user/services/signupUserProcess.js"></script>
-	<script src="user/services/signupModel.js"></script>
-	<script src="user/directives/usernameDomain.js"></script>
-	<script src="user/directives/usernamePassword.js"></script>
-	<script src="user/directives/humanVerification.js"></script>
-	<script src="user/directives/signupHumanForm.js"></script>
-	<!--	<script src="user/factories/addressesModel.js"></script>-->
-	
+    <script src="user/services/signupUserProcess.js"></script>
+    <script src="user/services/signupModel.js"></script>
+    <script src="user/directives/usernameDomain.js"></script>
+    <script src="user/directives/usernamePassword.js"></script>
+    <script src="user/directives/humanVerification.js"></script>
+    <script src="user/directives/signupHumanForm.js"></script>
+    
   </head>
   
   <body>
     <ul class="menu">
-    <li><a href="#!/login">login</a></li>
-    <li><a href="#!/signup">signup</a></li>
-    <div ng-view></div>
- 
-    <script>
-      angular.module('webmail')
-    </script>
-    
+      <li><a href="#!/login">login</a></li>
+      <li><a href="#!/signup">signup</a></li>
+      <li><a href="#!/account">account</a></li>
+      <li><a href="#!/appearance">appearance</a></li>
+      <li><a href="#!/help">help</li>
+      <li><a href="#!/identity">identity</li>
+      <li><a href="#!/message">message</li>
+      <li><a href="#!/send">send</li>
+      <li><a href="#!/login/setup">setup</a></li>
+      <li><a href="#!/secured/inbox">inbox</a></li>
+      <li><a href="#!/secured">secured</a></li>
+      <div ng-view></div>
+
+      <h2 class="sub-header">
+	<div class="pull-right">
+	  <a href="" class="btn btn-default"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings</a>
+	</div>
+	<span class="glyphicon glyphicon-{{mailbox.icon}}" aria-hidden="true"></span>
+	<span class="glyphicon glyphicon-inbox" aria-hidden="true"></span>
+	
+      
   </body>
 </html>

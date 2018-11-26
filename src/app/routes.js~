@@ -1,69 +1,39 @@
 angular.module('webmail')
     .config(function($routeProvider) {
 	$routeProvider.when('/signup', {
-	    templateUrl: 'views/signup.html'
-		    })
+	    controller: 'SignupController',
+	    templateUrl: 'templates/views/signup.html'
+	})
 	    .when('/login', {
-		    controller: 'LoginController',
-			templateUrl: 'views/login.html'
+		controller: 'LoginController',
+		templateUrl: 'templates/views/login.html'
+	    })
+	    .when('/account', {
+		templateUrl: 'templates/views/account.html'
+	    })
+	    .when('/appearance', {
+		templateUrl: 'templates/views/appearance.html'
+	    })
+	    .when('/help', {
+		templateUrl: 'templates/views/help.html'
+	    })
+	    .when('/identity', {
+		    templateUrl: 'templates/views/identity.html'
 			})
+	    .when('/message', {
+                    templateUrl: 'templates/message/message.html'
+                        })
+	    .when('/login/setup', {
+		controller: 'SetupController',
+		templateUrl: 'templates/views/setup.html'
+	    })
+	    .when('/secured/inbox', {
+		controller: 'ElementsController',
+		templateUrl: 'templates/partials/conversations.html'
+	    })
+	    .when('/secured', {
+		controller: 'SecuredController',
+		templateUrl: 'templates/layout/secured.html'
+	    })
 	    .otherwise('/login');
-	})			   
-/* 
-
-    .config(['$routeProvider', function($routeProvider) {
-                $routeProvider.when('/login/setup', {
-                        controller: 'SetupController',
-                            templateUrl: 'views/setup.html'
-			    });
-	    }])
-    .config(['$routeProvider', function($routeProvider) {
-		$routeProvider.when('/secured/inbox', {
-                        controller: 'ElementsController',
-			    templateUrl: 'partials/conversations.html'
-                            });
-	    }])
-    .config(['$routeProvider', function($routeProvider) {
-		$routeProvider.when('/secured', {
-			controller: 'SecuredController',
-			    templateUrl: 'layout/secured.html'
-			    });
-	    }])*/
-    /*.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-	    
-	    $stateProvider
-		
-		// ------------                                                                   
-		// LOGIN ROUTES                                                                     
-		// ------------   
-		
-		.state('login', {
-			url: '/login'
-		    })
-		
-		.state('signup', {
-			url: '/signup'
-		    })
-
-		// ------------------------------------------                                        
-		// SECURED ROUTES                                                                     
-		// this includes everything after login/unlock                                       
-		// ------------------------------------------    
-
-		.state('secured', {
-			//abstract: true,
-			// This is included in every secured.* sub-controller
-			url: '/secured',
-			    views: {
-			    'main@': {
-				controller: 'SecuredController',
-				    templateUrl: 'layout/secured.html'
-				    },
-				'sidebar@secured': {
-				    controller: 'SidebarController',
-					templateUrl: 'layout/sidebar.html'
-					}
-			}
-		    })
-	    
-	});*/
+    });

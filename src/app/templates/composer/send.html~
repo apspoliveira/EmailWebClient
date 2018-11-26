@@ -1,0 +1,24 @@
+<form method="post" id="send-form" class="form-horizontal" action="form-horizontal" enctype="multipart/form-data">
+  <input type="hidden" id="_csrf" name="_csrf" value="{{csrfToken}}">
+  <input type="hidden" name="action" value="{{values.action}}">
+  <input type="hidden" name="refMailbox" value="{{values.refMailbox}}">
+  <input type="hidden" name="refMessage" value="{{values.refMessage}}">
+  <input type="hidden" id="mailbox" name="draftMailbox" value="{{values.draftMailbox}}">
+  <input type="hidden" id="message" name="draftMessage" value="{{values.draftMessage}}">
+  <input type="hidden" name="draft" value="{{values.draft}}">
+
+  <div class="toolbar-container">
+    <div class="toolbar-main">
+      <fieldset id="action-toolbar">
+	<div class="form-group">
+	  <div class="col-sm-offset-1 col-sm-11" style="margin-top: 20px;">
+	    <button class="btn btn-primary btn-xs" type="button" data-toggle="modal" data-target="#sendModal"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> Send message</button>
+	    <button class="btn btn-default btn-xs" type="submit" name="userAction" value="save"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Save draft</button>
+	    <button class="btn btn-default btn-xs" type="button" data-toggle="modal" data-target="#deleteModal"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Discard Draft</button>
+	  </div>
+	</div>
+      </fieldset>
+    </div>
+  </div>
+</form>
+  

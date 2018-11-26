@@ -1,0 +1,43 @@
+<div class="pm_panel wide">
+  <div class="text-center header">
+    <h2>
+      <i class="fa fa-user"></i>
+      <span>Set up your account</span>
+    </h2>
+  </div>
+  <form method="post" ng-submit="submit(setup)" name="setup" role="form" class="pm_form">
+    <div class="wrapper margin">
+      <div>
+        <label class="titleLabel" for="Username">
+          <span>Email Address</span>
+        </label>
+        <div class="usernameWrap">
+          <p class="help">This will be your new email address.</p>
+          <strong ng-bind="username"></strong>
+          <em class="usernameDomain">@</em>
+          <span class="pm_select inline bigger">
+            <select class="selectDomain" ng-model="domain" ng-options="domain.label for domain in domains"></select>
+            <i class="fa fa-angle-down"></i>
+          </span>
+        </div>
+      </div>
+      
+      <div>
+        <label class="titleLabel" for="password">
+          <span>Password</span>
+        </label>
+        <input
+           class="loginSetup-field-password" 
+	   ng-model="password"
+           data-form="setup"></password>
+          <input
+	     class="loginSetup-field-password"
+	     ng-model="password"
+             data-form="setup"></password>
+
+         </div>
+         <div class="text-center">
+        <p><button type="submit" class="pm_button primary large">Setup Account</button></p>
+      </div>
+</form>
+</div>

@@ -3,7 +3,7 @@ angular.module('webmail')
 function authApi($http) {
     const requestURL = API_ENDPOINT + '/auth';
     return {
-	// Param - Username, ClientID and ClientSecret, SRPSession, ClientEphemeral, ClientProof and TwoFactorCode 
+	// Param - Username, ClientID, ClientSecret, SRPSession, ClientEphemeral, ClientProof and TwoFactorCode 
         authenticate(params) {
             return $http.post(requestURL, params);
 	},

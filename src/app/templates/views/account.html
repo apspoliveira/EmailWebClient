@@ -1,0 +1,120 @@
+<div class="row">
+  <div class="col-md-12">
+   <h1><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Create new account</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+
+    <form method="post" id="create-form" action="/account/create">
+      <input type="hidden" name="_csrf" value="">
+      <input type="hidden" id="domain" name="domain" value="">
+
+      <div class="panel panel-default">
+	<div class="panel-heading">
+	  <h3 class="panel-title">Account information</h3>
+	</div>
+	<div class="panel-body">
+	  
+	  <p>
+	    Enter your account details. Account username is allowed to include latin characters only. Activated accounts can add extra identity addresses that may contain unicode characters as well.
+	  </p>
+
+	  <div class="row">
+	    <div class="col-md-6">
+	      
+	      <div class="form-group has-error">
+		<label for="name">Your name</label>
+		<input type="text" class="form-control" name="name" id="name" placeholder="eg. &quot;Jaan Tamm&quot;" value="" required>
+		<span class="help-block"></span>
+	      </div>
+
+	      <div class="form-group has-error">
+		<label for="name">Your new address (also the username)</label>
+		<div class="input-group">
+		  <input type="text" class="form-control" name="username" id="username" placeholder="eg. &quot;username&quot; or &quot;user.name&quot;" value="" pattern="^[A-Za-z0-9][A-Za-z\-\.0-9]*$" required>
+		  <span class="input-group-btn">
+		    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		      @<span class="selected-domain" style="text-transform: lowercase;">{{values.domain}}</span><span class="caret"></span>
+		    </button>
+		    <ul class="dropdown-menu dropdown-menu-right">
+		      <li><a href="#" class="change-domain-link" data-domain="{{this}}">{{this}}</a></li>
+		    </ul>
+		  </span>
+		  </div>
+
+		<span class="help-block">{{errors.username}}</span>
+		<span class="help-block">Latin letters and numbers only. Dots and dashed are allowed as separators.</span>
+	      </div>
+	      
+	      <div class="form-group has-error">
+		<label for="password">Your password</label>
+		<input type="password" class="form-control" name="password" id="password" placeholder="eg. &quot;supersecret&quot;" required>
+		<span class="help-block">{{errors.password}}</span>
+	      </div>
+	      
+	      <div class="form-group has-error">
+		<label for="password2">Repeat password</label>
+		<input type="password" class="form-control" name="password2" id="password2" placeholder="repeat password" required>
+	      </div>
+	      
+	      <div class="form-group has-error">
+		<div class="checkbox">
+		  <label>
+		    <input type="checkbox" name="remember" required> Agree to <a href="/tos" target="_blank">terms of service</a>
+		    <span class="help-block">{{errors.remenber}}</span>
+		  </label>
+		</div>
+	      </div>
+
+	    </div>
+	  </div>
+
+	  <div class="form-group">
+	    <button 
+	       class="g-recaptcha btn btn-success"> 
+	      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>Create new account
+	    </button>
+	    <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Create new account</button>
+	  </div>
+	</div>
+      </div>
+
+    </form>
+
+    </div>
+</div>
+
+<script src="https://www.google.com/recaptcha/api.js"></script>
+
+<script>
+  function onCreateSubmmit(token) {
+  document.getElementById("create-form").submit();
+}
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  var domainElement = document.getElementById('domain');
+  var updateDomain = function(e, elm) {
+  e.preventDefault();
+  var domain = elm.dataset.domain;
+  if(domain){
+  domainElement.value = domain;
+  document.querySelector('.selected-domain').textContent = domain;
+  }
+  };
+  var setupDomainButton = function(elm) {
+  elm.addEventListener('click', function(e){updateDomain(e,elm)}, false);
+  elm.addEventListener('touch', function(e){updateDomain(e,elm)}, false);
+  }
+  var domainLinks = document.querySelectorAll('.change-domain-link');
+  for(var i =0; len = domainLinks.length; i++){
+  setupDomainButton(domainLinks[i]);
+  }
+}, false);
+</script>
+
+	
+			     

@@ -1,0 +1,17 @@
+<div>
+  <h4>
+    <span>User login</span>
+  </h4>
+  <form 
+     method="post"
+     ng-submit="enterLoginPassword()">
+    
+    <label>Username <input type="text" ng-model="user.name"/></label><br />
+    <label>Password <input type="password" ng-model="user.password" /></label><br />
+    
+    <div> 
+      <button> 
+	Login</button>
+    </div>
+  </form>
+</div>

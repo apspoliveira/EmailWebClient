@@ -4,17 +4,13 @@ function SignupController($rootScope, $scope, signupUserProcess, signupModel, pa
 {
     $scope.domains = [{
 	    value: 1,
-	    label: 'gmail.com'
-    }, {
+	    label: 'gmail.com'}, {
 	    value: 2,
-	    label: 'Yahoo Mail'
-	}, {
+	    label: 'Yahoo Mail'}, {
 	    value: 3,
-	    label: 'protonmail.com'
-	}, {
+	    label: 'protonmail.com'}, {
 	    value: 4,
-	    label: 'AOL Mail'
-	}];
+	    label: 'AOL Mail'}];
     
     $scope.updateDomain = function() {                                                 
 	$rootScope.username = $scope.username;

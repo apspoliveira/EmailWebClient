@@ -9,11 +9,6 @@ function signupModel(User, $rootScope) {
 	return key ? (item || {})[key] : item;
     };
     
-    const getDomain = function () {
-	const item = get('domain')
-	return item;
-    };
-    
     const store = function (data) {
 	CACHE.model = angular.copy(data);
     };
@@ -22,11 +17,6 @@ function signupModel(User, $rootScope) {
 	CACHE['model'][key] = angular.copy(value);
     };
     
-    const getPassword = function() {
-	const login = get();
-        return login.password;
-    };
-
     const createUser = function(model) {
 	
 	const params = {
@@ -39,7 +29,7 @@ function signupModel(User, $rootScope) {
 	    params.Token = model.smsCodeVerification; 
 	    params.TokenType = 'sms';
 	} 
-	else /*if (model.codeVerification != "") */ {
+	else {
 	    params.Token = 111111; //model.codeVerification;
 	    params.TokenType = 'email';
 	};
@@ -49,5 +39,5 @@ function signupModel(User, $rootScope) {
 	});
     }
     
-    return { get, set, store, getDomain, getPassword, createUser }; 
+    return { get, set, store, createUser }; 
 }

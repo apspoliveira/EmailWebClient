@@ -32,7 +32,7 @@ function humanVerification(User, signupModel) {
 	scope: {
 	    model: '='
 	},
-	templateUrl: 'user/directives/humanVerification.html',
+	templateUrl: 'templates/user/humanVerification.html',
 	controller: 'SignupController',
 	link(scope, el) {
 	    

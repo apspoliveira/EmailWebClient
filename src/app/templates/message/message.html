@@ -1,0 +1,173 @@
+<!--<article class="message">
+  <div class="summary" toggle-message>
+    <div class="pull-left">
+      <div class="meta">
+	<i class="history fa fa-reply"></i>
+	<i class="history fa fa-reply-all"></i>
+	<i class="history fa-mail-forward"></i>
+	<span class="contact message-contact">
+	  <span class="from message-contact-from"></span> 
+	</span>
+	</div>
+      <div class="location message-summary-folder">
+	</div>
+      <div class="labels message-summary-labels">
+      </div>
+      <div class="time">
+	<i class="fa fa-paperclip"></i>
+      </div>
+      <div class="status">
+      </div>
+    </div>
+    <div class="details">
+      <div class="recipients-summary">
+	<strong>To</strong>
+      </div>
+    </div>
+  </div>
+</article>-->
+<input type="hidden" id="mailbox" value="{{mailbox.id}}" />
+<input type="hidden" id="message" value="{{message.id}}" />
+<input type="hidden" id="_csrf" value="{{csrfToken}}">
+
+<h2 class="sub-header" style="display: flex;">
+  <div style="flex-grow: 1">
+    <table class="limited">
+      <tr class="messagerow">
+	<td class="message-subject-line">
+	  <a href="#" class="message-star"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></a>
+	  <span>{{message.subject}}</span>
+	</td>
+      </tr>
+    </table>
+  </div>
+  
+  <div>
+    <div class="btn-group">
+      <button type="button" class="btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Details <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right">
+	<li><a href=""><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Original message</a></li>
+	{{message.attachments}}
+	<li role="separator" class="divider"></li>
+	{{message.attachments}}
+	<li><a href="" download="{{filename}}"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span> {{filename}} {{sizeKb}}kB]</a></li>
+	</ul>
+      </div>
+    </div>
+  </h2>
+
+<div class="toolbar-container">
+  <div class="toolbar-main">
+    
+    <fieldset id="action-toolbar">
+      <div class="form-group">
+
+	<a href="" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> Reply</a>
+	<a href="" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> Reply to all</a>
+	<a href="" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-share" aria-hidden="true"></span> Forward</a>
+	
+	<span style="display: inline-block; width: 10px;"></span>
+	
+	<button class="btn btn-default btn-xs bulk-mark-unseen">Mark as Unseen</button>
+	
+	<span style="display: inline-block; width: 10px;"></span>
+
+	<button class="btn btn-default btn-xs bulk-delete" data-toggle="modal" data-target="deleteModal"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete</button>
+
+	<div class="btn-group">
+	  <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    <span class="glyphicon glyphicon-inbox" aria-hidden="true"></span> Move <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu">
+	    {{mailboxes}}
+	    <li><a href="#" class="bulk-move" data-mailbox="{{id}}" data-mailbox-path="{{path}}" data-toggle="modal" data-target="#moveModal">
+		<span class="glyphicon glyphicon-{{icon}}" aria-hidden="true"></span>
+		<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
+	    </a></li>
+	  </ul>
+	</div>
+
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="toolbar-search">
+    {{searchfield}}
+  </div>
+  
+</div>
+
+<div class="clearfix"></div>
+
+{{message.info}}
+<div>
+  <strong>{{key}}</strong>
+  <span class="datestring" title="{{value}}">
+  </span>
+</div>
+<div class="text-muted">
+  <strong>Message expires:</strong>
+  <span class="datestring" title="expires}}">
+    {{expires}}
+  </span>
+</div>
+
+<div style="margin-bottom: 5px;"></div>
+
+{{message.encrypted}}
+<div class="alert alert-warning" role="alert">
+  <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+  This message is encrypted and can not be properly displayed. Download the original message <a href="" role="button" download="{{message.id}}.eml" class="alert-link">from here </a> to open it in an e-mail client that is able to read encrypted messages. 
+</div>
+
+<div id="message-content" class="iframe-box"></div>
+
+{{message.attachments}}
+<div class="well">
+  <a class="btn btn-success btn-sm" href="" role="button" download="{{filename}}"><span class="glyphicon-cloud-download" aria-hidden="true"></span> {{filename}}</a>
+</div>
+
+<p>
+  &nbsp;
+</p>
+
+<!-- Modal -->
+<div class="modal" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	<h4 class="modal-title" id="deleteModalLabel">Delete message</h4>
+      </div>
+      <div class="modal-body">
+	Are you sure you want to permanently delete this message?
+	
+	Are you sure you want to move this message to Trash folder?
+      </div>
+      <div class="modal-footer">
+	<button type="button" class="btn btn-default" data-dismiss="modal">No, cancel</button>
+	<button type="button" class="btn btn-danger bulk-delete-confirm" data-loading-text="Deleting...">Yes, delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="moveModal" tabindex="-1" role="dialog" aria-labelledby="moveModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	<h4 class="modal-title" id="moveModalLabel">Move message</h4>
+      </div>
+      <div class="modal-body">
+	Are you sure you want to move this message to <span class="bulk-move-path">another folder</span>?
+      </div>
+      <div class="modal-footer">
+	<button type="button" class="btn btn-default" data-dismiss="modal">No, cancel</button>
+	<button type="button" class="btn btn-primary bulk-move-confirm" data-loading-text="Moving...">Yes, move</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,203 @@
+<!--<toolbar-desktop></toolbar-desktop>
+<div id="wrapper">
+
+  <div id="conversation-view" ui-view="view"></div>
+</div>-->
+
+<!--<h1 class="text-uppercase">Inbox</h1>
+<div class="form-inline">
+  <form>
+    <div class="form-group">
+      <label>Filter</label>
+      <input type="text" ng-model="filterText" class="form-control">
+    </div>
+  </form>
+</div>
+<div class="row">
+  <div class="col-md-3 mail-list">
+    <a href="" class="mail-list-anchor" ng-repeat="message in messages | filter:filterText" ng-click="setEmailContent($index)">
+      <div class="mail-list-item">
+      </div>
+    </a>
+  </div>
+  <div class="col-md-9 email-content">
+    <form class="pull-right">
+      <div class="form-inline">
+	<div class="form-group">
+	  <label>Text size</label>
+	  <div class="btn-group">
+	    <button class="btn btn-default form-control" ng-click="decrementTextSize()">A<sup>-</sup></button>
+	    <button class="btn btn-default form-control" ng-click="incrementTextSize()">A<sup>+</sup></button>
+	  </div>
+	</div>
+      </div>
+    </form>
+    <form>
+      <div class="form-group">
+	<label for="quick-reply-textarea">Quick-reply</label>
+	<textarea class="form-control" id="quick-reply-textarea"></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit">Send</button>
+    </form>
+  </div>
+</div>-->
+<h2 class="sub-header"><span class="glyphicon glyphicon-inbox" aria-hidden="true"></span> {{mailbox.name}}</h2>
+
+<form method="post">
+  <input type="hidden" name="_csrf" value="{{csrfToken}}">
+  
+  {{mailbox}}
+  
+  {{isInbox}}
+  <div class="form-group">
+    <div class="pull-right">
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete</button>
+    </div>
+    <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Update</button>
+    <h4 class="modal-title" id="deleteModalLabel">Delete folder</h4>
+  </div>
+  <div class="modal-body">
+    Are you sure you want to permanently delete <strong>{{mailbox.name}}</strong> and all its contents?
+  </div>
+  <div class="modal-footer">
+    <form method="post">
+      <input type="hidden" name="_csrf" value="{{csrfToken}}">
+      
+      <button type="button" class="btn btn-default" data-dismiss="modal">No, cancel</button>
+      <button type="submit" class="btn btn-danger">Yes, delete</button>
+    </form>
+  </div>
+</div>
+</div>
+</div>
+
+  <h2 class="sub-header">
+	<div class="pull-right">
+	  <a href="" class="btn btn-default"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings</a>
+	</div>
+	<span class="glyphicon glyphicon-{{mailbox.icon}}" aria-hidden="true"></span>
+	<span class="glyphicon glyphicon-inbox" aria-hidden="true"></span>
+	{{mailbox.name}}
+      </h2>
+      
+      <div class="toolbar-container">
+
+	<div class="toolbar-main">
+	  <div class="pull-left" style="margin-left: 10px; width: 20px;">
+	    <input type="checkbox" class="toggle-all" />
+	  </div>
+	  <fieldset id="action-toolbar" disabled>
+	    <div class="form-group">
+
+	      <button class="btn btn-default btn-xs bulk-mark-seen">Mark as Seen</button>
+	      <button class="btn btn-default btn-xs bulk-mark-unseen">Mark as Unseen</button>
+	      
+	      <span style="display: inline-block; width: 10px;"></span>
+
+	      <button class="btn btn-default btn-xs bulk-delete" data-toggle="modal" data-target="#deleteModal"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete</button>
+	      
+	      <div class="btn-group">
+		<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		  <span class="glyphicon glyphicon-inbox" aria-hidden="true"></span> Move <span class="caret"></span>
+		  </button>
+		<ul class="dropdown-menu">
+		  <li><a href="#" class="bulk-move" data-mailbox="{{id}}" data-toggle="modal" data-target="#moveModal">
+		      <span class="glyphicon glyphicon-{{icon}}" aria-hidden="true"></span>
+		      <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
+		    </a></li>
+		</ul>
+	      </div>
+	      
+	    </div>
+	  </fieldset>
+	</div>
+
+	<div class="toolbar-search">
+	  {{searchfield}}
+	</div>
+	
+	</div>
+	
+      <div class="clearfix"></div>
+
+      <div class="alert alert-info" style="padding: 5px 15px;" role="alert">Messages in Trash folder are deleted permanently after 30 days</div>
+      
+      <div class="alert alert-info" style="padding: 5px 15px;" role="alert">Messages in Junk Mail folder are deleted permanently after 30 days</div>
+
+      <div class="table-responsive">
+	<table class="messagelist">
+	  <colgroup>
+	    <col class="messagerow-spacer-col" />
+	    <col class="messagerow-checkbox-col" />
+	    <col class="messagerow-star-col" />
+	    <col class="messagerow-from-col" />
+	    <col class="messagerow-subject-col" />
+	    <col class="messagerow-info-col" />
+	    <col class="messagerow-date-col" />
+	    <col class="messagerow-spacer-col" />
+	  </colgroup>
+	  <tbody>
+	    {{messagerow}}
+	  </tbody>
+	</table>
+      </div>
+      
+      <nav aria-label="nav">
+	<ul class="pager">
+	  <li class="previous"><a href=""><span aria-hidden="true">&larr;</span> Newer</a></li>
+	  <li class="previous disabled"><a href=""><span aria-hidden="true">&larr;</span> Newer</a></li>
+	  <li style="display: inline-block; padding-top: 7px;">
+	    Page <strong>{{page}}</strong> (<strong>{{starStr}}</strong>-<strong>{{endStr}}</strong> out of <strong>{{resultsStr}}</strong> messages)
+	  </li>
+	  
+	  <li class="next"><a href="">Older <span aria-hidden="true">&arr;</span></a></li>
+	  <li class="next disabled"><a href="">Older <span aria-hidden="true">&arr;</span></a></li>
+	</ul>
+      </nav>
+      
+      <!-- Modal -->
+      <div class="modal" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+	    <div class="modal-header">
+	      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	      <h4 class="modal-title" id="deleteModalLabel">Delete messages</h4>
+	    </div>
+	    <div class="modal-body">
+	      Are you sure you want to permanently delete selected messages?
+	      
+	      Are you sure you want to move selected messages to Trash folder?
+	    </div>
+	    <div class="modal-footer">
+	      <button type="button" class="btn btn-default" data-dismiss="modal">No, cancel</button>
+	      <button type="button" class="btn btn-danger bulk-delete-confirm" data-loading-text="Deleting...">Yes, delete</button>
+	    </div>
+	  </div>
+	</div>
+      </div>
+      
+      <div class="modal" id="moveModal" tabindex="-1" role="dialog" aria-labelledby="moveModalLabel">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+	    <div class="modal-header">
+	      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	      <h4 class="modal-title" id="moveModalLabel">Move messages</h4>
+	    </div>
+	    <div class="modal-body">
+	      Are you sure you want to move selected messages to <span class="bulk-move-path">another folder</span>?
+	    </div>
+	    <div class="modal-footer">
+	      <button type="button" class="btn btn-default" data-dismiss="modal">No, cancel</button>
+	      <button type="button" class="btn btn-primary bulk-move-confirm" data-loading-text="Moving...">Yes, move</button>
+	    </div>
+	  </div>
+	</div>
+      </div>
+      
+      <input type="hidden" id="_csrf" value="{{csrfToken}}">
+      <input type="hidden" id="mailbox" value="{{mailbox.id}}">
+      <input type="hidden" id="cursor-type" value="{{cursorType}}"> 
+      <input type="hidden" id="cursor-value" value="{{cursorValue}}">
+      <input type="hidden" id="page" value="{{page}}">
+      <input type="hidden" id="mailbox-type" value="{{mailbox.specialUse}}">
+</div>

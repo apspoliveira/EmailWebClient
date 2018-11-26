@@ -1,0 +1,48 @@
+<div class="composer animate composer-container">
+  <section class="flex composer-section">
+    <div class="composeEditor fill">
+      <div 
+         class="dropzone composer-dropzone fill" 
+         id="dropzone_message{{::message.ID}}"></div>
+    </div>
+  </section>
+  
+  <footer>
+    <button class="composer-btn-attachment needsclick">
+      <i class="fa fa-paperclip">Add file</i>
+    </button>
+    
+    <button 
+       ng-click="togglePanel(message, 'encrypt')">
+      <i class="fa fa-lock"></i>
+    </button>
+    
+    <button 
+       class="pm_button composer-btn-expiration" 
+       ng-click="togglePanel(message, 'expiration')">
+      <i class="fa fa-hourglass-end"></i>
+    </button>
+    
+    <div class="pull-right">
+      <button 
+         class="pm_button composer-btn-discard" 
+         ng-click="discard(message)">
+        <i class="fa fa-trash-o"></i>
+        <span>Discard</span>
+      </button>
+      
+      <button 
+         class="composer-btn-save" 
+         ng-click="save(message, true, false)">
+        <i class="fa fa-floppy-o"></i>
+        <span>Save</span>
+      </button>
+      <button 
+	 class="composer-btn-save"
+         ng-click="send(message)">
+	<i class="fa fa-send"></i>
+	<span>Send</span>
+      </button>
+    </div>
+  </footer>
+</div>

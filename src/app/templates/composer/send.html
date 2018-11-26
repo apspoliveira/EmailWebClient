@@ -1,0 +1,128 @@
+<form method="post" id="send-form" class="form-horizontal" action="form-horizontal" enctype="multipart/form-data">
+  <input type="hidden" id="_csrf" name="_csrf" value="{{csrfToken}}">
+  <input type="hidden" name="action" value="{{values.action}}">
+  <input type="hidden" name="refMailbox" value="{{values.refMailbox}}">
+  <input type="hidden" name="refMessage" value="{{values.refMessage}}">
+  <input type="hidden" id="mailbox" name="draftMailbox" value="{{values.draftMailbox}}">
+  <input type="hidden" id="message" name="draftMessage" value="{{values.draftMessage}}">
+  <input type="hidden" name="draft" value="{{values.draft}}">
+
+  <div class="toolbar-container">
+    <div class="toolbar-main">
+      <fieldset id="action-toolbar">
+	<div class="form-group">
+	  <div class="col-sm-offset-1 col-sm-11" style="margin-top: 20px;">
+	    <button class="btn btn-primary btn-xs" type="button" data-toggle="modal" data-target="#sendModal"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> Send message</button>
+	    <button class="btn btn-default btn-xs" type="submit" name="userAction" value="save"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Save draft</button>
+	    <button class="btn btn-default btn-xs" type="button" data-toggle="modal" data-target="#deleteModal"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Discard Draft</button>
+	  </div>
+	</div>
+      </fieldset>
+    </div>
+  </div>
+  <div id="from-field" class="form-group has-error" style="display:none">
+    <label for="inputFrom" class="col-sm-1 control-label">From</label>
+    <div class="col-sm-11">
+      <select class="form-control" name="from" id="inputFrom">
+	<option value="{{id}}">
+	</option>
+      </select>
+      <span class="help-block">{{errors.from}}</span>
+    </div>
+  </div>
+
+  <div class="form-group has-error">
+    <label for="inputTo" class="col-sm-1 control-label">To</label>
+    <div class="col-sm-11">
+      <input type="text" class="form-control" name="to" value="{{values.to}}" placeholder="Recipient">
+      {{errors.to}}
+      <span class="help-block"></span>
+    </div>
+  </div>
+
+  <div id="cc-field" class="form-group has-error" style="display:none">
+    <label for="inputCc" class="col-sm-1 control-label">Cc</label>
+    <div class="col-sm-11">
+      <input type="text" class="form-control" name="cc" id="inputCc" value="{{values.cc}}" placeholder="Cc">
+      {{errors.cc}}
+      <span class="help-block">{{errors.cc}}</span>
+    </div>
+  </div>
+
+  <div id="bcc-field" class="form-group has-error" style="display:none">
+    <label for="inputBcc" class="col-sm-1 control-label">Bcc</label>
+    <div class="col-sm-11">
+      <input type="text" class="form-control" name="bcc" id="inputBcc" value="{{values.bcc}}" placeholder="Bcc">
+      {{errors.bcc}}
+      <span class="help-block">{{errors.bcc}}</span>
+    </div>
+  </div>
+
+  <div class="text-right" style="margin-top: -10px; margin-bottom: 10px;">
+    <a href="#" id="link-add-from" style="display:none">From</a>
+    <a href="#" id="link-add-cc" style="display:none">Cc</a>
+    <a href="#" id="link-add-bcc" style="display:none">Bcc</a>
+  </div>
+
+  <div class="form-group has-error">
+    <label for="inputSubject" class="col-sm-1 control-label">Subject</label>
+    <div class="col-sm-11">
+      <input type="text" class="form-control" id="inputSubject" name="subject" value="{{values.subject}}" placeholder="Message subject">
+      <span class="help-block">{{errors.subject}}</span>
+    </div>
+  </div>
+
+  <div class="form-group has-error">
+    <div class="col-sm-12">
+      <textarea id="summernote" name="editordata"></textarea>
+      <span class="help-block">{{errors.editordata}}</span>
+    </div>
+  </div>
+
+  <div id="attachment-field" class="form-group has-error">
+    <div class="col-sm-12">
+
+      <label for="inputAttachment">Attachments</label>
+      <input id="input-attachment" name="attachment" class="form-control file" type="file" multiple>
+      <span class="help-block">{{errors.attachment}}</span>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+	<div class="modal-header">
+	  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  <h4 class="modal-title" id="deleteModalLabel">Delete draft</h4>
+	</div>
+	<div class="modal-body">
+	  Are you sure you want to permanently delete this draft?
+	</div>
+	<div class="modal-footer">
+	  <button type="button" class="btn btn-default" data-dismiss="modal">No, cancel</button>
+	  <button type="button" class="btn btn-danger bulk-delete-confirm" data-loading-text="Deleting...">Yes, delete</button>
+	  </div>
+	</div>
+      </div>
+    </div>
+
+  <div class="modal" id="sendModal" tabindex="-1" role="dialog" aria-labelledby="sendModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+	<div class="modal-header">
+	  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  <h4 class="modal-title" id="sendModalLabel">Send message</h4>
+	  </div>
+	<div class="modal-body">
+	  Are you sure you want to send this message?
+	</div>
+	<div class="modal-footer">
+	  <button type="button" class="btn btn-default" data-dismiss="modal">No, cancel</button>
+	  <button type="submit" name="userAction" value="send" class="btn btn-primary bulk-send-confirm" data-loading-text="Sending...">Yes, send</button>
+	</div>
+      </div>
+    </div>
+  </div>
+  
+</form>

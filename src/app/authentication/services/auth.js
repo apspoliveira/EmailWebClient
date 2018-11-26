@@ -16,8 +16,7 @@ function authentication($http, $rootScope, authApi, srp) {
     // Param - AccessToken, RefreshToken, UID, ExpiresIn, EventID
     function receivedCredentials(data) {
     }
-    
-    // RUN-TIME PUBLIC FUNCTIONS                                                       
+                                                       
     var api = {
 	receivedCredentials,
 	setAuthCookie(authResponse) {
@@ -27,8 +26,8 @@ function authentication($http, $rootScope, authApi, srp) {
 		GrantType: 'refresh_token',
 		RefreshToken: authResponse.RefreshToken,
 		UID: authResponse.UID,
-		RedirectURI: '',//,https://protonmail.com',
-		State: ''//this.randomString(24)
+		RedirectURI: '',
+		State: ''
 		});
 	},
 	loginWithCredentials(creds, initialInfoResponse) {	    

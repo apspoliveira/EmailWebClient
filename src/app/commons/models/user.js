@@ -1,7 +1,7 @@
 angular.module('webmail')
     .factory('User', User);
 function User($http, srp, authApi) {
-    const headersVersion3 = { 'x-pm-apiversion': 3 };
+    //const headersVersion3 = { 'x-pm-apiversion': 3 };
     
     return {
 	// Params - Username, Email, Type, TokenType, Token, Version, ModulusID, Salt, Verifier

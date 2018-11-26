@@ -91,20 +91,20 @@ function srp($http, authApi, passwords)  {
 	var proofs;
 
 	const session = infoResp.data.SRPSession;
-	const modulus = openpgp.util.str_to_Uint8Array(pmcrypto.decode_base64(openpgp.cleartext.readArmored(infoResp.data.Modulus).getText()));
-        const serverEphemeral = openpgp.util.str_to_Uint8Array(pmcrypto.decode_base64(infoResp.data.ServerEphemeral));
+	const modulus = openpgp.util.str_to_Uint8Array(atob(openpgp.cleartext.readArmored(infoResp.data.Modulus).getText().trim()));
+        const serverEphemeral = openpgp.util.str_to_Uint8Array(atob(infoResp.data.ServerEphemeral.trim()));
 	
 	var authVersion = infoResp.data.Version;
 	
-	var salt = pmcrypto.decode_base64(infoResp.data.Salt);
+	var salt = atob(infoResp.data.Salt.trim());
 	
 	return passwords.hashPassword(authVersion, creds.Password, salt, creds.Username, modulus).then(function (hashed) {
 	    proofs = generateProofs(2048, srpHasher, modulus, hashed, serverEphemeral);
 	    
 	    const data = _.extend(req, { 
 		SRPSession: session,
-		ClientEphemeral: pmcrypto.encode_base64(openpgp.util.Uint8Array_to_str(proofs.ClientEphemeral)),
-		ClientProof: pmcrypto.encode_base64(openpgp.util.Uint8Array_to_str(proofs.ClientProof)),
+		ClientEphemeral: btoa(openpgp.util.Uint8Array_to_str(proofs.ClientEphemeral).trim()),
+		ClientProof: btoa(openpgp.util.Uint8Array_to_str(proofs.ClientProof).trim()),
 		TwoFactorCode: creds.TwoFactorCode
 	    });
 	    

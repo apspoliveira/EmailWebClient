@@ -1,0 +1,75 @@
+<nav class="toolbarMobile-container pm_toolbar">
+  <span class="pm_buttons back">
+    <a ng-click="back()">
+      <i class="fa fa-long-arrow-left"></i>
+    </a>
+  </span>
+  <span class="pm_buttons">
+    <a class="pm_trigger">
+      <em><i class="fa fa-eye-slash"></i>
+        <i class="fa fa-angle-down"></i></em>
+    </a>
+    <span class="pm_dropdown wide">
+      <a ng-click="unread()">
+        <i class="fa fa-eye-slash"></i>
+        <span>Mark as unread</span>
+      </a>
+      <a ng-click="read()">
+        <i class="fa fa-eye"></i>
+        <span>Mark as read</span>
+      </a>
+        </span>
+  </span>
+  <span class="pm_buttons">
+    <a class="pm_trigger">
+      <em><i class="fa fa-trash-o"></i>
+        <i class="fa fa-angle-down"></i></em>
+        </a>
+        <span class="pm_dropdown wide">
+            <a ng-click="move('trash')">
+              <i class="fa fa-trash-o"></i>
+              <span>Move to trash</span>
+            </a>
+            <a ng-click="move('inbox')">
+              <i class="fa fa-inbox"></i>
+              <span>Move to inbox</span>
+            </a>
+            <a ng-click="move('archive')">
+              <i class="fa fa-archive"></i>
+              <span>Move to archive</span>
+            </a>
+	    <a ng-click="move('spam')">
+	      <i class="fa fa-ban"></i>
+              <span>Move to spam</span>
+	    </a>
+	    <a ng-click="delete()">
+              <i class="fa fa-times-circle-o"></i>
+              <span>Delete</span>
+            </a>
+            <a ng-click="move('inbox')">
+              <i class="fa fa-check"></i>
+              <span>Not spam</span>
+            </a>
+        </span>
+  </span>
+  <span class="pm_buttons">
+    <span class="pm_buttons">
+      <a href="#" class="pm_trigger open-folder">
+        <i class="fa fa-folder"></i>
+        <i class="fa fa-angle-down"></i>
+      </a>
+      <span class="pm_dropdown wide right">
+      </span>
+    </span>
+    <span class="pm_buttons">
+      <a href="#" class="pm_trigger open-label">
+        <i class="fa fa-tag"></i>
+        <i class="fa fa-angle-down"></i>
+      </a>
+      <span class="pm_dropdown wide right">
+        </span>
+      </span>
+    </span>
+    <div class="pull-right">
+    </div>
+</nav>
