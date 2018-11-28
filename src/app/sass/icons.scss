@@ -1,0 +1,25 @@
+[class*="pt-fa-bg-"] {
+		     position: relative;
+		     &:before {
+		     // display the before on top of the :after background
+		     position: absolute;  
+		     }
+
+		     &.fa-warning:after {
+		        content: "-";
+	  	     }
+
+		     &.fa-check-circle:after {
+		     // fa-circle
+		     content: "\f111";
+		     }
+	}
+
+	pt-ga-ng-white:after {
+	color: white;
+	}
+
+	.ico-protonvpn {
+		       background-image: url(assets('img/icons/protonvpn-ico.svg'));
+		       background-size: 100% 100%;
+	}

@@ -1,0 +1,90 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Account</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      {{accountmenu}}
+    </ul>
+
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="overview">
+	
+	<p>&nbsp;</p>
+
+
+	<form method="post" action="/account/profile">
+	  <input type="hidden" name="_csrf" value="{{csrfToken}}">
+	  
+	  <fieldset>
+	    <div class="panel panel-default">
+	      <div class="panel-heading">
+		<h3 class="panel-title">General</h3>
+	      </div>
+	      <div class="panel-body">
+
+		<div class="form-group">
+		  <label class="control-label">Username</label>
+		  <div class="input-group">
+		    <p class="form-control-static">{{values.username}}</p>
+		  </div>
+		</div>
+
+		<div class="form-group has-error">
+		  <label for="name">Your name</label>
+		  <input type="text" class="form-control" name="name" id="name">
+		  <span class="help-block"></span>
+		</div>
+
+		<div class="form-group has-error">
+		  <label for="name">Spam detection level</label>
+		  <select class="form-control" name="spamLevel">
+		    <option value="">
+		      -- Select --
+		    </option>
+		    <option value="{{value}}">
+		    </option>
+		  </select>
+
+		  <span class="help-block"></span>
+		</div>
+		
+	      </div>
+	    </div>
+
+	    <div class="panel panel-default">
+	      <div class="panel-heading">
+		<h3 class="panel-title">Message forwarding</h3>
+	      </div>
+	      <div class="panel-body">
+		
+		<p>
+		  Leave the following fields blank if you do not wish to forward all incoming emails 
+		</p>
+		
+		<div class="form-group has-error">
+		  <label for="targets">Forward incoming messages to:</label>
+		  <input type="text" class="form-control" name="targets" id="targets" placeholder="user@example.com" value="">
+		  <span class="help-block"></span>
+		</div>
+	      </div>
+	    </div>
+
+	  </fieldset>
+
+	  <div class="form-group">
+	    <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Update</button>
+	  </div>
+
+	</form>
+      </div>
+    </div>
+  </div>
+</div>
+		
+	   

@@ -1,0 +1,317 @@
+@charset "UTF-8";
+html.webmail {
+  height: 100%;
+  .professional-color: #D4B46E;
+}
+html.webmail body {
+  height: 100%;
+}
+html.webmail body .blank {
+  background: #FFF;
+}
+html.webmail body .mobileOnly,
+html.webmail body .lowResolution {
+  display: none;
+}
+html.webmail body.scroll {
+  overflow: initial;
+  -webkit-overflow-scrolling: touch;
+  height: initial !important;
+}
+html.webmail body a.appConfigBody-is-mobile {
+  height: 100vh;
+  min-height: 100%;
+}
+html.webmail body a.appConfigBody-is-mobile .desktopOnly {
+  display: none !important;
+}
+html.webmail body a.appConfigBody-is-mobile .mobileOnly {
+  display: block;
+}
+html.webmail body a.appConfigBody-is-mobile.locked {
+  overflow: initial !important;
+}
+html.webmail body a.appConfigBody-is-mobile.appConfigBody-showSidebar {
+  overflow: hidden !important;
+}
+html.webmail body a.appConfigBody-is-mobile.appConfigBody-showSidebar #pm_main {
+  display: none;
+}
+html.webmail body a.appConfigBody-is-mobile #body {
+  height: initial;
+}
+html.webmail body a.appConfigBody-is-mobile #body #pm_main {
+  height: calc(100vh - 70px);
+}
+html.webmail body.appConfigBody-is-tablet .lowResolution, html.webmail body.appConfigBody-is-mobile .lowResolution {
+  display: inline-flex;
+}
+html.webmail body.appConfigBody-is-tablet .desktopOnly, html.webmail body.appConfigBody-is-mobile .desktopOnly {
+  display: none !important;
+}
+html.webmail body.appConfigBody-is-mobile .notMobile {
+  display: none;
+}
+html.webmail .hidden {
+  display: none !important;
+}
+html.webmail .visionary {
+  color: #6ddcfb;
+}
+html.webmail .plus {
+  color: #C6E422;
+}
+html.webmail .lifetime {
+  color: #5FDEFB;
+}
+html.webmail .background-primary {
+  background: #9397cd;
+}
+html.webmail .background-red-stripped {
+  background: repeating-line-gradient(45deg, #F35D5D, #F35DSD 10px, #EC424A 10px, #EC424A 20px);
+}
+html.webmail .background-yellow-stripped {
+  background: repeating-line-gradient(45deg, #FCF785, #FCF785 10px, #EFEA62 10px, #EFEA62 20px);
+}
+html.webmail .bold {
+  font-weight: bold;
+}
+html.webmail .uppercase {
+  text-transform: uppercase;
+}
+html.webmail .clear {
+  clear: both;
+}
+html.webmail .text-center {
+  text-align: center;
+}
+html.webmail .text-left {
+  text-align: left;
+}
+html.webmail .text-right {
+  text-align: right;
+}
+html.webmail .text-notransform {
+  text-transform: none;
+}
+html.webmail .text-gray {
+  color: #555;
+}
+html.webmail .text-light-gray {
+  color: #565656;
+}
+html.webmail .text-green {
+  color: #a6cc93;
+}
+html.webmail .text-yellow {
+  color: #fded87;
+}
+html.webmail .text-red {
+  color: #cc9393;
+}
+html.webmail .text-purple {
+  color: #9397cd !important;
+}
+html.webmail .text-blue-gray {
+  color: #AEAEBA;
+}
+html.webmail .fill-gray {
+  fill: #555;
+}
+html.webmail .fill-light-gray {
+  fill: #565656;
+}
+html.webmail .fill-green {
+  fill: #a6cc93;
+}
+html.webmail .fill-yellow {
+  fill: #fded87;
+}
+html.webmail .fill-red {
+  fill: #cc9393;
+}
+html.webmail .fill-purple {
+  fill: #9397cd !important;
+}
+html.webmail .fill-blue-gray {
+  fill: #AEAEBA;
+}
+html.webmail .border-panel {
+  padding: 15px;
+  border: 1px solid #acb0bf;
+}
+html.webmail .padding-top {
+  padding-top: 10px;
+}
+html.webmail .margin-top {
+  margin-top: 10px;
+}
+html.webmail .margin-right {
+  margin-right: 10px;
+}
+html.webmail .margin-bottom {
+  margin-bottom: 10px;
+}
+html.webmail .margin-left {
+  margin-left: 10px;
+}
+html.webmail .spacing-top {
+  margin-top: 3rem;
+}
+html.webmail .spacing-bottom {
+  margin-bottom: 3rem;
+}
+html.webmail .flex-space-right {
+  margin-right: 4px;
+}
+html.webmail .flex-space-left {
+  margin-left: 4px;
+}
+html.webmail .flex-space-top {
+  margin-top: 4px;
+}
+html.webmail .flex-space-bottom {
+  margin-bottom: 4px;
+}
+html.webmail .no-margin {
+  margin: 0;
+}
+html.webmail .cursor-pointer {
+  cursor: pointer;
+}
+html.webmail .dull {
+  opacity: 0.5;
+}
+html.webmail .emphaseText {
+  font-size: 1rem;
+}
+html.webmail .help {
+  font-size: 12px;
+  font-style: italic;
+}
+html.webmail .or {
+  font-size: 75%;
+}
+html.webmail .ellipsis {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+html.webmail .help-dnd {
+  font-style: italic;
+  opacity: 0;
+}
+html.webmail .help-dnd-before {
+  margin-right: -0.5em;
+  font-family: FontAwesome;
+  font-style: normal;
+  content: "";
+}
+html.webmail ::-webkit-input-placeholder {
+  color: #aaaabf;
+}
+html.webmail :-moz-placeholder {
+  color: #aaaabf;
+}
+html.webmail ::-moz-placeholder {
+  color: #aaaabf;
+}
+html.webmail input:-ms-input-placeholder {
+  color: #aaaabf;
+}
+html.webmail ::-ms-input-placeholder {
+  color: #aaaabf;
+}
+html.webmail :-ms-input-placeholder {
+  color: #aaaabf;
+}
+html.webmail .placeholder-white::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+html.webmail .placeholder-white:-moz-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+html.webmail .placeholder-white::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+html.webmail .placeholder-whiteinput:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+html.webmail .placeholder-white::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+html.webmail .placeholder-white:-ms-input-placeholder {
+   color: rgba(255, 255, 255, 0.75);
+}
+
+input,
+textarea,
+select {
+  background: #FFF;
+}
+
+a[href]:not([tabindex="-1"]):active,
+area[href]:not([tabindex="-1"]):active,
+input:not([disabled]):not([tabindex="-1"]):active,
+select:not([disabled]):not([tabindex="-1"]):active,
+textarea:not([disabled]):not([tabindex="-1"]):active,
+button:not([disabled]):not([tabindex="-1"]):active,
+iframe:not([tabindex="-1"]):active,
+[tabindex]:not([tabindex="-1"]):active,
+[contentEditable=true]:not([tabindex="-1"]):active {
+  /* activable elements */
+  outline: none;
+}
+
+button,
+input[type=button],
+input[type=reset],
+input[type=submit],
+[role=button] {
+  cursor: pointer;
+}
+
+fieldset {
+  border: 1px solid #9397cd;
+  padding: 1em;
+  border-radius: 2px;
+  margin-bottom: 1em;
+}
+
+/* removes X in input when typing in IE/EDGE */
+input::-ms-clear {
+  width: 0;
+  height: 0;
+}
+
+/* removes native password revealer for IE/EDGE */
+input::-ms-reveal {
+  display: none;
+}
+
+fieldset legend {
+  color: #9397cd;
+  text-transform: uppercase;
+  padding-left: -0.5em;
+  padding-right: -0.5em;
+}
+
+.no-outline {
+  outline: none;
+}
+
+.code {
+  font-family: monospace;
+  color: #000;
+  border-radius: 2px;
+  max-width: 100%;
+  line-height: 1.35em;
+  overflow: auto;
+  word-break: break-all;
+  white-space: normal;
+  padding: 0 0.5rem;
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+/*# sourceMappingURL=global.css.map */

@@ -1,0 +1,120 @@
+.loginForm-actions {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loginForm-actions-row,
+.loginForm-actions-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.loginForm-actions-column {
+  flex-direction: column;
+}
+
+.loginForm-actions-row {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.loginForm-actions-row > *,
+.loginForm-actions-column > * {
+  flex-grow: 1;
+  flex-shrink: 0;
+  margin: 0.5em 0 1em 0;
+  align-items: center;
+  text-align: center;
+}
+.loginForm-actions-row > *:last-child,
+.loginForm-actions-column > *:last-child {
+  margin-right: 0;
+}
+
+.loginForm-actions-row > * {
+  white-space: nowrap;
+}
+
+.loginForm-actions-main {
+  width: 100%;
+  font-weight: bold;
+  font-size: 1em;
+  height: auto;
+  min-height: 45px;
+  /*safari*/
+  line-height: 1.3em;
+  padding: 0.5em;
+  border-radius: 4px;
+  margin-top: 0;
+}
+
+.loginForm-btn-help {
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.loginForm-link-signup,
+.loginForm-btn-oldversion {
+  text-transform: none;
+  font-weight: bold;
+}
+
+.loginForm-link-signup-button {
+  box-sizing: border-box;
+  display: block;
+  border: 1px solid #FFF;
+  border-radius: 4px;
+  background: transparent;
+  text-decoration: none;
+  width: 100%;
+  padding: 1em 0.5em;
+  font-weight: bold;
+  color: #FFF;
+  transition: all 0.3s ease-out;
+}
+.loginForm-link-signup-button:focus, .loginForm-link-signup-button:hover {
+  background: #FFF;
+  color: #4d4c5d !important;
+  transition: none;
+}
+.loginForm-link-signup-button:active {
+  background: #9397cd;
+  border: 1px solid #9397cd;
+}
+
+.loginForm-actions-help,
+.loginForm-actions-new-container {
+  with: 100%;
+}
+
+/* content with line-through around */
+.loginForm-actions-new-title {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.loginForm-actions-new-title::before, .loginForm-actions-new-title::after {
+  content: "";
+  flex: 1;
+  align-self: center;
+  border-bottom: 1px solud CurrentColor;
+}
+.loginForm-actions-new-title::before {
+  margin-right: 1em;
+}
+.loginForm-actions-new-title::after {
+  margin-left: 1em;
+}
+
+.loginForm-input-password .togglePassword-btn-toggle,
+.protonmail .loginForm-input-password .text-red {
+  color: #FFF;
+}
+
+/*# sourceMappingURL=loginForm.css.map */

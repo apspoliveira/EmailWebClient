@@ -1,0 +1,213 @@
+/* override FontAwesome font path $var */
+.ua-ie body.scroll {
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+.ua-ie body #pm_thread {
+  /* allow text selection with scroll*/
+  overflow-y: scroll;
+}
+.ua-ie #pm_composer .composer {
+  border: 1px solid #acb0bf;
+}
+
+.ua-ios .angular-squire-wrapper {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.ua-ios .angular-squire {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.ua-ios #pm_captcha {
+  -webkit-overflow-scrolling: touch;
+  overflow: auto !important;
+}
+.ua-ios #pm_thread {
+  position: relative;
+}
+.ua-ios #pm_thread:before {
+  position: absolute;
+  display: block;
+  content: "";
+  height: calc(100% * 1px);
+  width: 100%;
+  z-index: -1;
+}
+
+.ua-firefox.ua-desktop-linux .pm_button a,
+.ua-firefox.ua-desktop-linux .pm_button {
+  overflow: hidden;
+}
+
+.ua-windows_nt-6-1.ua_firefox .pm_labels label .close::before {
+  line-height: 12px;
+}
+
+.ua-mac_os_x.ua_firefox .pm_labels label,
+.ua-mac_os_x.ua_firefox .pm_labels label.closed-hover,
+.ua-windows_nt-6-1.ua_firefox .pm_labels label,
+.ua-windows_nt-6-1.ua_firefox .pm_labels label.closed-hover {
+  line-height: 8px;
+}
+.ua-mac_os_x.ua_firefox .summary .pm_tag,
+.ua-windows_nt-6-1.ua_firefox .summary .pm_tag {
+  line-height: 18px;
+}
+
+.ua-firefox {
+  /* remove extra padding on button */
+  button: -moz-focus-inner;
+  button-padding: 0;
+  button-border: 0;
+}
+.ua-firefox .pm_labels label {
+  line-height: -moz-block-height;
+}
+.ua-firefox .pm_labels label.close:hover {
+  line-height: -moz-block-height;
+}
+.ua-firefox .pm_button {
+  line-height: -moz-block-height;
+}
+.ua-firefox #pm_composer .composer footer .pm_button {
+  line-height: -moz-block-height;
+}
+.ua-firefox form.searchForm fieldset button,
+.ua-firefox form.searchFOrm fieldset button .fa {
+  line-height: 32px;
+}
+.ua-firefox .pm_tag {
+  position: relative;
+  top: -2px;
+}
+.ua-firefox .pm_table th .pm_button .pm_table td .pm_button {
+  line-height: 36px;
+}
+
+.ua-windows_nt.ua-firefox.ua.firefox #pm_composer .composer .pm_button {
+  line-height: -moz-block-height;
+}
+.ua-windows_nt.ua-firefox.ua.firefox pm_buttons a,
+.ua-windows_nt.ua-firefox.ua.firefox .pm_button {
+  line-height: -moz-block-height;
+}
+.ua-windows_nt.ua-firefox.ua.firefox #pm_sidebar section.sidebar .pm_button.round {
+  line-height: 30px;
+}
+.ua-windows_nt.ua-firefox.ua.firefox .pm_table th .pm_button.round,
+.ua-windows_nt.ua-firefox.ua.firefox .pm_table td .pm_button.round {
+  line-height: 32px;
+  position: relative;
+}
+
+.ua-windows_nt-6.ua-ie-11-0 #pm_settings #plans .plans .plan .features li .pm_select {
+  position: relative;
+  top: 0;
+}
+
+.ua-firefox .pm_button,
+.ua-firefox .pm_button a {
+  overflow: hidden;
+}
+
+input:invalid,
+input:-moz-ui-invalid {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+/* removes "clear button" on WebKit/Blink */
+.searchInput-noClearSearch::-webkit-search-cancel-button {
+  display: none;
+}
+
+.ua-safari #conversation-list-rows .conversation .subject .pm_labels,
+.ua-safari #conversation-view .message > div.summary .labels .pm_labels {
+  top: 0;
+}
+
+.on-ie11-only {
+  display: none !important;
+}
+
+.ua-ie-11 #conversation-list-rows .conversation -subject {
+  display: inline-block;
+}
+.ua-ie-11 .on-ie11-only {
+  display: block !important;
+}
+.ua-ie-11 .not-on-ie11 {
+  display: none !important;
+}
+
+/* 2FA inputs */
+/* only apply to tested browser cause placeholder styling is tricky*/
+.ua-ie .pm_form input[type=text].TwoFa-input,
+.ua-safari .pm_form input[type=text].TwoFa-input,
+.ua-chrome .pm_form input[type=text].TwoFa-input,
+.ua-firefox .pm_form input[type=text].TwoFa-input {
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+.ua-ie .pm_form input[type=text].TwoFa-input::-webkit-input-placeholder,
+.ua-safari .pm_form input[type=text].TwoFa-input::-webkit-input-placeholder,
+.ua-chrome .pm_form input[type=text].TwoFa-input::-webkit-input-placeholder,
+.ua-firefox .pm_form input[type=text].TwoFa-input::-webkit-input-placeholder {
+  font-size: 14px;
+  letter-spacing: 0px;
+  line-height: 24px;
+  /* safari */
+}
+.ua-ie .pm_form input[type=text].TwoFa-input:-moz-placeholder,
+.ua-safari .pm_form input[type=text].TwoFa-input:-moz-placeholder,
+.ua-chrome .pm_form input[type=text].TwoFa-input:-moz-placeholder,
+.ua-firefox .pm_form input[type=text].TwoFa-input:-moz-placeholder {
+  /* Firefox 18. */
+  font-size: 14px;
+  letter-spacing: 0px;
+}
+.ua-ie .pm_form input[type=text].TwoFa-input::-moz-placeholder,
+.ua-safari .pm_form input[type=text].TwoFa-input::-moz-placeholder,
+.ua-chrome .pm_form input[type=text].TwoFa-input::-moz-placeholder,
+.ua-firefox .pm_form input[type=text].TwoFa-input::-moz-placeholder {
+  /* Firefox 19 */
+  font-size: 14px;
+  letter-spacing: 0px;
+}
+.ua-ie .pm_form input[type=text].TwoFa-input:-ms-input-placeholder,
+.ua-safari .pm_form input[type=text].TwoFa-input:-ms-input-placeholder,
+.ua-chrome .pm_form input[type=text].TwoFa-input:-ms-input-placeholder,
+.ua-firefox .pm_form input[type=text].TwoFa-input:-ms-input-placeholder {
+  /*IE*/
+  font-size: 14px;
+  letter-spacing: 0px;
+}
+
+#pm_slow {
+  display: flex !important;
+}
+
+#pm_slow2 {
+  display: none !important;
+}
+
+[id^=eo-] #pm_slow {
+  display: none !important;
+}
+[id^=eo-] #pm_slow2 {
+  display: flex !important;
+}
+
+.m-encrypt-frame {
+  z-index: 110;
+}
+
+.m-extract-frame.m-large.m-decrypt {
+  left: 55px !important;
+}
+
+/*# sourceMappingURL=browser.css.map */

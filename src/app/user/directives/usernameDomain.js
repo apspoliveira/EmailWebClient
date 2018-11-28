@@ -1,7 +1,7 @@
 angular.module('webmail')
     .directive('usernameDomain', function() {
 	return {
-	    templateUrl: 'user/directives/usernameDomain.html',
+	    templateUrl: 'templates/user/usernameDomain.html',
 	    controller: 'SignupController'
 	}
     });

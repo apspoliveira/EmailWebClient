@@ -1,5 +1,4 @@
 <form 
-   name="composeForm" 
-   id="pm_composer">
+   name="composeForm">
   <composer></composer>
 </div>

@@ -22,8 +22,16 @@
   "author": "António Oliveira",
   "license": "ISC",
   "dependencies": {
+    "awesomplete": "^1.1.3",
+    "components-font-awesome": "^5.4.2",
+    "dropzone": "^5.5.1",
     "git": "^0.1.5",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "malihu-custom-scrollbar-plugin": "^3.1.5",
+    "ng-sortable": "^1.3.8",
+    "normalize.css": "^8.0.1",
+    "nouislider": "^12.1.0",
+    "pikaday": "^1.8.0"
   },
   "devDependencies": {
     "asmcrypto.js": "github:vibornoff/asmcrypto.js.git#bfb14fdb4cecebd1ae260ae78e3663b8273120e1",

@@ -1,0 +1,156 @@
+$light: #f4f4f4;
+$default-color: #555;
+$text: #222;
+$primary: #9397cd;
+
+
+[class*='signUpProcess-step-'] {
+			       margin-bottom: 2rem;
+			       margin-top: 3rem;
+}
+
+[class*='signUpProcess-step-'] .wrapper {
+			       padding: 0 65px;
+			       position: relative;
+			       text-align: initial;
+}
+
+.signupUserForm-container .usernameDomain-container,
+.signupUserForm-container .usernamePassword-container,
+.signupUserForm-container .notificationEmail-container,
+.humanVerification-container .humanVerification-wrapper { margin-top: 2rem }
+
+/* HEADER */
+[class*='signUpProcess-step-'] > .header { margin-top: 1rem }
+
+.signupPayForm-header-title,
+.signupUserForm-header-title {
+			     text-transform: uppercase;
+			     margin-bottom: 1rem;
+}
+
+[class*='signUpProcess-step-'] [data-step] { position: relative; }
+[class*='signUpProcess-step-'] [data-step]::before { content: attr(data-step) }
+
+[class*='signUpProcess-step-'] [data-step]::before {
+			       position: absolute;
+			       width: 2rem;
+			       left: -65px;
+			       font-weight: 700;
+			       border-radius: 2rem;
+			       background-color: $light;
+			       text-align: center;
+			       line-height: 2rem;
+			       display: block;
+			       height: 2rem;
+			       font-size: .8rem;
+			       font-style: normal;
+			       color: $default-color
+		}
+
+[class*='signUpProcess-step-'] .titleLabel {
+			       position: relative;
+			       font-weight: 700;
+			       text-align: left;
+			       color: $text;
+			       font-weight: 700;
+			       font-size: 1.1rem;
+}
+
+.signupUserForm-container .usernameDomain-container > .help,
+.signupUserForm-container .notificationEmail-container > .help,
+.humanVerification-container .humanVerification-wrapper > .help { margin-top: 0 }
+
+
+/* FOOTER */
+
+.signupUserForm-footer {
+		       text-align: center;
+		       margin-top: 3rem;
+}
+
+/* STEP-1 */
+
+.signUpProcess-step-1 .usernameWrap {
+		      display: flex;
+		      align-items: center;
+}
+
+.signUpProcess-step-1 .usernameWrap .usernameInput { flex-grow: 1 }
+.signUpProcess-step-1 .usernameWrap .usernameDomain { padding: 0 5px }
+
+/* humanVerification */
+
+.humanVerification-wrapper {
+			   width: 375px;
+			   margin: 0px auto;
+}
+
+/* creationList */
+
+[class*='signUpProcess-step'] ol#creationList,
+[class*='signUpProcess-step'] ol#creationList li {
+			      display: display;
+			      list-style-type: none;
+			      .fa {
+			         width: 1.5rem;
+				 display: inline-block;
+				 opacity: 0;
+				 -webkit-transition: opacity 1s ease;
+				 -moz-transition:    opacity 1s ease;
+				 -ms-transition:     opacity 1s ease;
+				 -o-transition:	     opacity 1s ease;
+				 transition:	     opacity 1s ease;	
+			&.show {
+			  opacity: 1;
+			}
+	}
+}
+
+
+/* IFRAME */
+[class*='signUpProcess-step-'] iframe#pm_captcha {
+			       border: none;
+			       width: 100%;
+			       position: relative;
+			       left: -8px;
+			       height: 120px;
+			       overflow: hidden;
+			       z-index: 5;
+}
+
+[class*='signUpProcess-step-'] #captchaFrame {
+			       position: relative;
+			       .loading {
+			          position: absolute;
+			       left: 0;
+			       right: 0;
+			       top: 4rem;
+			       text-align: center;
+			       z-index: 1;
+			       display: block;
+		}
+}
+
+[class*='signUpProcess-step-'] .spinner.large {
+			       height: 14rem;
+			       .spinner, .spinner2, .spinner3 {
+			          background-color: $primary;
+			}
+}
+
+[class*='signUpProcess-step-'] .signup-radio-label { height: 1.5rem }
+[class*='signUpProcess-step-'] .signup-radio-label-text {
+			       color: #000;
+			       font-size: 1rem;
+}
+
+[class*='signUpProcess-step-'] .genNewKeys-1-loader-container,
+[class*='signUpProcess-step-'] .creating-loader-container {
+			       display: flex;
+			       justify-content: center;
+}
+
+/* RESPONSIVE */
+
+ 

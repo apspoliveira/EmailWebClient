@@ -1,0 +1,47 @@
+/*.humanVerification-type-captcha .humanVerification-help-privacy,
+.humanVerification-type-donation .humanVerification-help-privacy {
+  display: none;
+}
+
+.humanVerification-type-donation .humanVerification-completeSetup {
+  display: none;
+}
+
+.humanVerification-wrapper:not(.humanVerification-type-email) .humanVerification-form-email {
+  display: none;
+}
+
+.humanVerification-wrapper:not(.humanVerification-type-sms) .humanVerification-form-sms {
+  display: none;
+}
+
+.humanVerification-wrapper:not(.humanVerification-type-captcha) .humanVerification-form-captcha {
+  display: none;
+}
+
+.humanVerification-wrapper:not(.humanVerification-type-donation) .humanVerification-form-donation {
+  display: none;
+}
+
+.humanVerification-wrapper:not(.humanVerification-show-email) .humanVerification-block-email {
+  display: none;
+}
+
+.humanVerification-wrapper:not(.humanVerification-show-sms) .humanVerification-block-sms {
+  display: none;
+}
+
+.humanVerification-wrapper.humanVerification-show-captcha .humanVerification-sms-details,
+.humanVerification-wrapper.humanVerification-show-email .humanVerification-sms-details {
+  display: none;
+}
+
+.humanVerification-wrapper:not(.humanVerification-show-captcha) .humanVerification-block-captcha {
+  display: none;
+}
+
+.humanVerification-wrapper:not(.humanVerification-show-donation) .humanVerification-block-donation {
+  display: none;
+}*/
+
+/*# sourceMappingURL=humanVerification.css.map */

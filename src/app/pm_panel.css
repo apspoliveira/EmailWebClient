@@ -1,0 +1,56 @@
+.pm_panel {
+  width: 400px;
+  margin: auto;
+  color: #FFF;
+  box-sizing: border-box;
+  padding: 50px;
+  max-width: 100%;
+}
+.pm_panel.alt {
+  position: relative;
+  background: rgba(255, 255, 255, 0.3);
+  border: 0;
+  border-radius: 4px;
+  margin-top: 8rem;
+  margin-bottom: 2rem;
+  padding: 50px 44px 0 44px;
+  box-sizing: border-box;
+  min-height: 350px;
+}
+.pm_panel.alt a {
+  color: #FFF;
+}
+.pm_panel.alt.pm_panel--twofactors {
+  background: rgba(0, 0, 0, 0.1);
+}
+.pm_panel.wide {
+  width: 600px;
+}
+.pm_panel-login.alt {
+  background: transparent;
+  padding: 0;
+}
+.pm_panel-login__inner {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 50px 44px 0 44px;
+  border: 1px solid #9397cd;
+  border-radius: 4px;
+}
+.pm_panel-bottom {
+  padding: 1em 44px;
+  background: transparent;
+}
+
+body.light .pm_panel {
+  background: #FFF;
+  color: #555;
+}
+
+#support-reset-password .wrap,
+#support-message .wrap {
+  width: 400px;
+  margin: 2rem auto;
+  box-sizing: border-box;
+}
+
+/*# sourceMappingURL=pm_panel.css.map */

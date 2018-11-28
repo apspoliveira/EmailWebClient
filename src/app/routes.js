@@ -20,6 +20,9 @@ angular.module('webmail')
 	    .when('/identity', {
 		    templateUrl: 'templates/views/identity.html'
 			})
+	    .when('/composer', {
+                    templateUrl: 'templates/composer/composer.html'
+			})                       
 	    .when('/message', {
                     templateUrl: 'templates/message/message.html'
                         })
@@ -28,7 +31,7 @@ angular.module('webmail')
                         })
 	    .when('/login/setup', {
 		controller: 'SetupController',
-		templateUrl: 'templates/views/setup.html'
+		templateUrl: 'templates/views/setup.tpl.html'
 	    })
 	    .when('/secured/inbox', {
 		controller: 'ElementsController',

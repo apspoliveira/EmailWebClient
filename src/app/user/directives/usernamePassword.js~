@@ -1,17 +1,7 @@
-angular.module('webmail.user')
-    .controller('UsernamePasswordController', ['$rootScope', '$scope', function($rootScope, $scope) {
-		$scope.update = function() {       
-		    $rootScope.password = $scope.password;
-                };
-
-            }])
+angular.module('webmail')
     .directive('usernamePassword', function() {
-	    return {
-		replace: true,
-		    scope: {
-		    form: '=',
-			model: '='
-			},
-		    templateUrl: 'user/directives/usernamePassword.html'
-		    }
-	});
+	return {
+	    templateUrl: 'user/directives/usernamePassword.html',
+	    controller: 'SignupController'
+	}
+    });

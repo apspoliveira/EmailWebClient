@@ -1,1 +1,12 @@
 <login-form></login-form>
+<div class="row">
+  <div class="col-md-12">
+    <h1><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Log in</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+
+    <form method="post" action="/account/login">
+      <input type="hidden" name="_csrf" value="

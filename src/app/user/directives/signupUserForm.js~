@@ -1,26 +1,7 @@
 angular.module('webmail')
 .directive('signupUserForm', function() {
 	return {
-	    templateUrl: 'user/directives/signupUserForm.html'
-		}
+	    templateUrl: 'user/directives/signupUserForm.html',                       
+	    controller: 'SignupController'                    
+	}
     })
-
-/*
-
-function signupUserForm($window)
- {
-     return {
-	     templateUrl: 'user/directives/signupUserForm.html',
-	     controller: 'SignupController',
-	     link: function(scope, element) {
-		    
-		    element.on('submit', onSubmit);
-		    
-		    console.log(element);
-		    
-		    scope.$on('$destroy', function() {
-			    element.off('submit', onSubmit);
-			});
-	 }
-     }
-     };*/

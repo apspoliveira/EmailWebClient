@@ -1,5 +1,5 @@
 <signup-user-form>
 </signup-user-form> 
 
-<!--<signup-human-form>
-</signup-human-form>-->
+<signup-human-form>
+</signup-human-form>

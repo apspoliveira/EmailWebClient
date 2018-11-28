@@ -1,6 +1,0 @@
-<div class="identitySection-container">
-  <div class="col-3-8">
-    <label class="identitySection-multiple-label">Select an address</label>
-    <label class="identitySection-single-label">Address</label>
-  </div>
-</div>

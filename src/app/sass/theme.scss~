@@ -1,0 +1,12 @@
+#customTheme:not(:empty) - #body {
+			 .sidebarApp-container {
+			    .sidebarApp-item .navigationItem-aside,
+			    .sidebarApp-menu .sidebarApp-item:after { background: none }
+
+			    .sidebarApp-item .navigationItem-title,
+			    .navigationSettings-link > span {
+			       overflow: hidden;
+			       text-overflow: ellipsis;
+			    }
+		}
+}

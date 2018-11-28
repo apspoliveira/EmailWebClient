@@ -1,0 +1,18 @@
+.signupUserForm-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.signupUserForm-footer a {
+  color: #9397cd;
+}
+.signupUserForm-footer a:hover {
+  color: #505061;
+  text-decoration: none;
+}
+
+.signUpProcess-btn-create {
+  margin-bottom: 1em;
+}
+
+/*# sourceMappingURL=signupUserForm.css.map */

@@ -1,0 +1,33 @@
+/* override FontAwesome font path $var */
+.secure:not(:light) {
+  background: #505061;
+  background-size: cover;
+}
+.secure:not(:light)::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  box-shadow: none;
+}
+
+#pm_main {
+  background: #FFF;
+  color: set-invert-color(#a6eaf0, #555);
+  border-radius: 0;
+}
+
+#conversation-view .frame {
+  background: #FFF;
+}
+
+.composer-container,
+.squire-container {
+  background: #FFF;
+  color: set-invert-color(#FFF, #555);
+}
+
+/*# sourceMappingURL=colors.css.map */

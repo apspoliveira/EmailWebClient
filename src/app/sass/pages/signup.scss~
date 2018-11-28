@@ -1,0 +1,18 @@
+[class*='signUpProcess-step-'] {
+			       margin-bottom: 2rem;
+			       margin-top: 3rem;
+}
+
+[class*='signUpProcess-step-'] .wrapper {
+			       padding: 0 65px;
+			       position: relative;
+			       text-align: initial;
+}
+
+.signupUserForm-container .usernameDomain-container,
+.signupUserForm-container .usernamePassword-container,
+.signupUserForm-container .notificationEmail-container,
+.humanVerification-container .humanVerification-wrapper { margin-top: 2rem }
+
+/* HEADER */
+[class*=

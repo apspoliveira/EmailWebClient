@@ -26,6 +26,7 @@ function LoginController($scope, authentication, authApi) {
     }
     
     $scope.enterLoginPassword = function() {
+	console.log('enter login password');
 	const username = $scope.user.name;
 	const password = $scope.user.password;
 	
@@ -39,7 +40,6 @@ function LoginController($scope, authentication, authApi) {
 	    ClientSecret: clientSecret
 	};
 	authApi.info(params).then(function(resp) {
-	    $scope.initialInfoResponse = resp;
 	    login(usernameLowerCase, password, $scope.initialInfoResponse);
 	});
     };   
