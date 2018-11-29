@@ -1,0 +1,289 @@
+/* override FontAwesome font path $var */
+body#reset {
+  background: #4d4c5d;
+}
+body#reset alert:not(.alert-danger) {
+  color: #000;
+}
+body#reset .pm_panel {
+  display: flex;
+  align-items: center;
+}
+
+body#login-unlock,
+body#login-sub {
+  height: 100%;
+  background: #4d4c5d;
+}
+body#login-unlock p.text-center,
+body#login-sub p.text-center {
+  margin: 0 0 2rem 0;
+  font-size: 14px;
+}
+body#login-unlock #pm_loader,
+body#login-sub #pm_loader {
+  display: none;
+}
+
+body#login {
+  background-color: #667cbd;
+  background: url(assets("img/login.jgp")) #667cbd center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#pm_login {
+  background-image: url("#hostURL#");
+}
+
+body#login-unlock #pm_login img.logo,
+body#login-unlock #pm_loginTwoFactor img.logo,
+body#login-sub #pm_login img.logo,
+body#login-sub #pm_loginTwoFactor img.logo,
+body#login #pm_login img.logo,
+body#login #pm_loginTwoFactor img.logo,
+body#eo-unlock #pm_login img.logo,
+body#eo-unlock #pm_loginTwoFactor img.logo {
+  margin-bottom: 2rem;
+}
+
+body#eo-unlock {
+  background: #4d4c5d;
+}
+body#eo-unlock .pm_panel.error {
+  height: initial;
+  padding: 2rem 2rem 1rem 2rem;
+}
+
+#pm_login,
+#pm_loginTwoFactor,
+body#reset {
+  text-transform: uppercase;
+}
+#pm_login #signUpProcess li,
+#pm_loginTwoFactor #signUpProcess li,
+body#reset #signUpProcess li {
+  text-align: left;
+}
+#pm_login h4,
+#pm_loginTwoFactor h4,
+body#reset h4 {
+  padding: 0.9em 0;
+  line-height: 1.2em;
+  font-weight: 600;
+}
+#pm_login a.pm_button.link,
+#pm_loginTwoFactor a.pm_button.link,
+body#reset a.pm_button.link {
+  text-decoration: underline;
+}
+#pm_login img.logo,
+#pm_loginTwoFactor img.logo,
+body#reset img.logo {
+  display: block;
+  height: 20px;
+  width: auto;
+  margin: 0 autp;
+}
+#pm_login input[type=text],
+#pm_login input[type=number],
+#pm_login input[type=password],
+#pm_login input[type=email],
+#pm_loginTwoFactor input[type=text],
+#pm_loginTwoFactor input[type=number],
+#pm_loginTwoFactor input[type=password],
+#pm_loginTwoFactor input[type=email],
+body#reset input[type=text],
+body#reset input[type=number],
+body#reset input[type=password],
+body#reset input[type=email] {
+  border-color: #dfdfdf;
+  background: rgba(107, 107, 107, 0.1);
+  color: #FFF;
+  line-height: 1;
+  height: 38px;
+}
+#pm_login input[type=text]:active, #pm_login input[type=text]:focus,
+#pm_login input[type=number]:active,
+#pm_login input[type=number]:focus,
+#pm_login input[type=password]:active,
+#pm_login input[type=password]:focus,
+#pm_login input[type=email]:active,
+#pm_login input[type=email]:focus,
+#pm_loginTwoFactor input[type=text]:active,
+#pm_loginTwoFactor input[type=text]:focus,
+#pm_loginTwoFactor input[type=number]:active,
+#pm_loginTwoFactor input[type=number]:focus,
+#pm_loginTwoFactor input[type=password]:active,
+#pm_loginTwoFactor input[type=password]:focus,
+#pm_loginTwoFactor input[type=email]:active,
+#pm_loginTwoFactor input[type=email]:focus,
+body#reset input[type=text]:active,
+body#reset input[type=text]:focus,
+body#reset input[type=number]:active,
+body#reset input[type=number]:focus,
+body#reset input[type=password]:active,
+body#reset input[type=password]:focus,
+body#reset input[type=email]:active,
+body#reset input[type=email]:focus {
+  color: #FFF;
+}
+#pm_login .password-container,
+#pm_loginTwoFactor .password-container,
+body#reset .password-container {
+  line-height: 38px;
+}
+#pm_login .loginForm-input-password .password-messages,
+#pm_login .unlock-input-password .password-messages,
+#pm_loginTwoFactor .loginForm-input-password .password-messages,
+#pm_loginTwoFactor .unlock-input-password .password-messages,
+body#reset .loginForm-input-password .password-messages,
+body#reset .unlock-input-password .password-messages {
+  display: none;
+}
+#pm_login .customPasswordToggler.loginForm-input-password .password-input[type=password], #pm_login .customPasswordToggler.unlock-input-password .password-input[type=password],
+#pm_loginTwoFactor .customPasswordToggler.loginForm-input-password .password-input[type=password],
+#pm_loginTwoFactor .customPasswordToggler.unlock-input-password .password-input[type=password],
+body#reset .customPasswordToggler.loginForm-input-password .password-input[type=password],
+body#reset .customPasswordToggler.unlock-input-password .password-input[type=password] {
+  padding: 10px 30px 10px 0px;
+}
+#pm_login p,
+#pm_loginTwoFactor p,
+body#reset p {
+  text-transform: initial;
+}
+#pm_login ::-webkit-input-placeholder,
+#pm_loginTwoFactor ::-webkit-input-placeholder,
+body#reset ::-webkit-input-placeholder {
+  color: #FFF;
+}
+#pm_login :-moz-placeholder,
+#pm_loginTwoFactor :-moz-placeholder,
+body#reset :-moz-placeholder {
+  color: #FFF;
+}
+#pm_login ::-moz-placeholder,
+#pm_loginTwoFactor ::-moz-placeholder,
+body#reset ::-moz-placeholder {
+  color: #FFF;
+}
+#pm_login input:-ms-input-placeholder,
+#pm_loginTwoFactor input:-ms-input-placeholder,
+body#reset input:-ms-input-placeholder {
+  color: #FFF;
+}
+#pm_login ::-ms-input-placeholder,
+#pm_loginTwoFactor ::-ms-input-placeholder,
+body#reset ::-ms-input-placeholder {
+  color: #FFF;
+}
+#pm_login :-ms-input-placeholder,
+#pm_loginTwoFactor :-ms-input-placeholder,
+body#reset :-ms-input-placeholder {
+  color: #FFF;
+}
+#pm_login.loadingUnlock,
+#pm_loginTwoFactor.loadingUnlock,
+body#reset.loadingUnlock {
+  position: relative;
+  padding: 0;
+}
+#pm_login.loadingUnlock .loadingUnlock-loader-container,
+#pm_loginTwoFactor.loadingUnlock .loadingUnlock-loader-container,
+body#reset.loadingUnlock .loadingUnlock-loader-container {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+#pm_login.loadingUnlock .unlock-panel,
+#pm_loginTwoFactor.loadingUnlock .unlock-panel,
+body#reset.loadingUnlock .unlock-panel {
+  display: none;
+}
+#pm_login .loadingUnlock-loader-container,
+#pm_loginTwoFactor .loadingUnlock-loader-container,
+body#reset .loadingUnlock-loader-container {
+  display: none;
+}
+
+#pm_footer {
+  position: absolute;
+  text-align: center;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: #FFF;
+  text-transform: uppercase;
+  display: block;
+  padding: 1rem 0;
+  font-size: 90%;
+}
+#pm_footer p {
+  margin: 0;
+}
+#pm_footer a {
+  color: #FFF;
+  text-decoration: none;
+}
+#pm_footer a:hover {
+  color: #e5e5e5;
+}
+#pm_footer.static {
+  position: static;
+  color: #555;
+}
+#pm_footer.static a {
+  color: #555;
+  text-decoration: none;
+}
+#pm_footer.static a:hover {
+  color: #000;
+}
+
+#pm_login .alert-danger,
+#pm_loginTwoFactor .alert-danger,
+body#reset .alert-danger,
+body#support-reset-password .alert-danger {
+  font-weight: bold;
+  color: #FFF;
+}
+#pm_login alert ul,
+#pm_loginTwoFactor alert ul,
+body#reset alert ul,
+body#support-reset-password alert ul {
+  padding: 0;
+  font-size: 0.9em;
+}
+#pm_login alert ul li,
+#pm_loginTwoFactor alert ul li,
+body#reset alert ul li,
+body#support-reset-password alert ul li {
+  margin-bottom: 0.5em;
+}
+
+body.appConfigBody-is-mobile #pm_login input[type=text],
+body.appConfigBody-is-mobile #pm_login input[type=password] {
+  background: rgba(0, 0, 0, 0.1);
+}
+body.appConfigBody-is-mobile #pm_login.pm_panel {
+  margin: 0;
+  border: none;
+  background: transparent;
+}
+body.appConfigBody-is-mobile #pm_footer {
+  display: none;
+}
+
+@media (max-height: 740px) {
+  #pm_footer {
+    position: static;
+  }
+}
+
+/*# sourceMappingURL=login.css.map */

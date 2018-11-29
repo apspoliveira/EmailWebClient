@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["sass/variables.scss","sass/components/composer/composerHeader.scss"],"names":[],"mappings":"AAEA;ACAA;EACK,YD6DO;EC5DP;;;AAGL;EACG;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGH;EAA0B;;;AAE1B;EACM;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAEN;EAA2B","file":"composerHeader.css"}

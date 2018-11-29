@@ -21,7 +21,7 @@ angular.module('webmail')
 		    templateUrl: 'templates/views/identity.html'
 			})
 	    .when('/composer', {
-                    templateUrl: 'templates/composer/composer.html'
+                    templateUrl: 'templates/composer/composer-header.tpl.html'
 			})                       
 	    .when('/message', {
                     templateUrl: 'templates/message/message.html'

@@ -16,6 +16,7 @@ $border-radius: 2px;
 $black: #000;
 
 html.webmail {
+	     background-color: black;
 	     height: 100%;
 	     body {
 	        height: 100%;
@@ -271,12 +272,12 @@ fieldset {
 	   margin-bottom: 1em;
 }
 
-/* removes X in input when typing in IE/EDGE */
+
 input::-ms-clear {
    width: 0;
    height: 0;
 }
-/* removes native password revealer for IE/EDGE */
+
 input::-ms-reveal {
 		     display: none;
 }

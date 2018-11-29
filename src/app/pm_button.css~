@@ -1,0 +1,364 @@
+/* override FontAwesome font path $var */
+.pm_button {
+  text-decoration: none;
+  color: #666;
+  padding: 0 10px;
+  height: 35px;
+  line-height: 35px;
+  border: 1px solid #acb0bf;
+  border-radius: 2px;
+  box-sizing: border-box;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 12px;
+  text-transform: uppercase;
+  background-color: transparent;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  -webkit-tap-highlight-color: transparent;
+  vertical-align: middle;
+  z-index: 1;
+}
+.pm_button:hover, .pm_button:focus {
+  background-color: #F2F2F2;
+  color: #222;
+  transition: none;
+}
+.pm_button:active {
+  background: #e5e5e5;
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.pm_button.fullwidth {
+  width: 100%;
+}
+.pm_button.large {
+  line-height: 50px;
+  height: 50px;
+  padding: 0 2rem;
+  font-size: 16px;
+}
+.pm_button.small {
+  font-size: 10px;
+  height: 30px;
+  line-height: 30px;
+}
+.pm_button.primary {
+  background-color: #9397cd;
+  border-color: #9397cd;
+  color: set-color(#9397cd, #FFF);
+  /* modifier for new home buttons */
+}
+.pm_button.primary:hover, .pm_button.primary:focus {
+  background-color: #8286c5;
+  border-color: transparent;
+}
+.pm_button.primary:active {
+  background-color: #66669a;
+  border-color: #66669a;
+}
+.pm_button.primary[disabled], .pm_button.primary.disabled {
+  background: #9a9ed0;
+}
+.pm_button.primary-white {
+  background: #FFF;
+  border-color: #FFF;
+  color: #4d4c5d;
+}
+.pm_button.primary-white:focus, .pm_button.primary-white:hover {
+  background: #9397cd;
+  border-color: #9397cd;
+  color: #FFF;
+}
+.pm_button.primary-white:active {
+  background-color: #505061;
+  border-color: #505061;
+  color: #FFF;
+}
+.pm_button.primary-white[disabled] {
+  background-color: #FFF;
+}
+.pm_button.link {
+  background-color: transparent;
+  border-color: transparent;
+  color: #9397cd;
+  box-shadow: none;
+}
+.pm_button.link:active, .pm_button.link:focus, .pm_button.link:hover {
+  text-decoration: underline;
+}
+.pm_button.autoHeight {
+  height: auto;
+  line-height: initial;
+}
+.pm_button.round {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  width: 30px;
+  box-sizing: border-box;
+  text-align: center;
+  border: 1px solid #acb0bf;
+  border-radius: 30px;
+  padding: 0;
+}
+.pm_button.round.big {
+  margin-top: -10px;
+  font-size: 22px;
+  border-radius: 40px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+}
+.pm_button.round .fa {
+  color: #9397cd;
+}
+.pm_button.round:hover, .pm_button.round:focus {
+  background-color: #fafafa;
+}
+.pm_button.round:active {
+  background-color: #f4f4f4;
+}
+.pm_button.success {
+  background-color: #A6cc93;
+  border-color: #89bc70;
+  color: #FFF;
+}
+.pm_button.success:hover, .pm_button.success:focus {
+  background-color: #89bc70;
+  border-color: #89bc70;
+}
+.pm_button.success[disabled], .pm_button.success.disabled {
+  background: #accf9a;
+}
+.pm_button.white {
+  background: #FFFFFF;
+}
+.pm_button.dark:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+.pm_button.error {
+  background-color: #cc9393;
+  border-color: #bc7070;
+  color: #FFF;
+}
+.pm_button.error:hover, .pm_button.error:focus {
+  background-color: #bc7070;
+  border-color: #bc7070;
+}
+.pm_button.error[disabled], .pm_button.error.disabled {
+  background: #cf9a9a;
+}
+.pm_button[disabled], .pm_button.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: default;
+  box-shadow: inset 0 0 5rem 0 rgba(0, 0, 0, 0.06);
+}
+.pm_button.dead {
+  pointer-events: none;
+  cursor: default;
+}
+.pm_button.main {
+  padding: 0px 20px;
+}
+.pm_button.dangerous {
+  box-shadow: none;
+  border: 0;
+  padding: 0px 4px;
+  margin: 0px 10px;
+  color: #cc9393;
+}
+.pm_button.dangerous span {
+  text-decoration: underline;
+}
+.pm_button strong {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.pm_button .fa, .pm_button svg, .pm_button span {
+  pointer-events: none;
+}
+
+.pull-right .pm_buttons {
+  margin: 0 0 0 10px;
+}
+
+.pm_buttons {
+  border: 1px solid #acb0bf;
+  height: 33px;
+  margin: 0 10px 0 0;
+  position: relative;
+  border-radius: 2px;
+  color: #666;
+}
+.pm_buttons.inline {
+  display: inline-block;
+  float: none;
+}
+.pm_buttons.disabled {
+  border: 1px solid #c9cbd5;
+  color: #acb0bf;
+}
+.pm_buttons .disabled,
+.pm_buttons [disabled] {
+  pointer-events: none;
+  box-shadow: none;
+  box-shadow: inset 0 0 50rem 0 #b7eef3;
+  color: #acb0bf;
+}
+.pm_buttons .dead {
+  pointer-events: none;
+  cursor: default;
+}
+.pm_buttons .fa {
+  font-size: 16px;
+}
+.pm_buttons .fa.fa-angle-down {
+  font-size: 14px;
+  margin-left: 2px;
+}
+.pm_buttons .fa.fa-angle-down.wide {
+  padding: 0 10px;
+}
+.pm_buttons .pm_buttons {
+  float: left;
+  /* inline-block add extra space*/
+  border-radius: 0;
+  margin: 0 !important;
+  /* override unknown margin for appConfigBody-is-mobile */
+  border: none;
+}
+.pm_buttons .pm_buttons.pm_button {
+  height: 33px;
+  line-height: 36px;
+}
+.pm_buttons .pm_buttons:not(:first-of-type) {
+  border-left: 1px solid #acb0bf;
+}
+.pm_buttons a {
+  text-decoration: none;
+  color: inherit;
+  padding: 0 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  -webkit-tap-highlight-color: transparent;
+  /* no z-index here, otherwise, menus will fail */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  background: #FFFFFF;
+}
+.pm_buttons a.fa-angle-down {
+  padding: 0 3px;
+}
+.pm_buttons a.fa-angle-down.wide {
+  padding: 0 10px;
+}
+.pm_buttons a:hover, .pm_buttons a:focus {
+  background-color: #F2F2F2;
+  color: #222;
+  transition: none;
+}
+.pm_buttons a:active, .pm_buttons a.active {
+  background: #e5e5e5;
+  box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+.pm_buttons a.inheritPadding {
+  padding: inherit;
+}
+.pm_buttons.link {
+  border: none;
+}
+.pm_buttons.link .pm_button {
+  padding: 0;
+  background-color: transparent;
+  border-color: transparent;
+  color: #9397cd;
+  box-shadow: none;
+}
+.pm_buttons.link .pm_button:active, .pm_buttons.link .pm_button:focus, .pm_buttons.link .pm_button:hover {
+  text-decoration: underline;
+}
+.pm_buttons.link .disabled {
+  visibility: underline;
+}
+.pm_buttons .disabled {
+  visibility: hidden;
+}
+
+strong {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/*&.primary {
+       a {
+           background-color: $primary;
+	   border-color: $primary;
+	   color: $white;
+	   &:hover,
+	   &:focus {
+	        background-color: #7e82b4;
+		border-color: #7e82b4;
+           }
+	   &:active {
+	        background-color: 66669a;
+		border-color: 66669a;
+           }
+       }
+
+    }
+}
+
+
+.pm_buttons .pm_buttons-child {
+	    border-width: 0 0 0 1px;
+	    padding: 0;
+	    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
+	    background: $button-background;
+}
+
+.pm_buttons .pm_buttons-child:hover,
+.pm_buttons .pm_buttons-child:focus {
+	    background-color: $button-background-focus;
+	    color: $button-color-focus;
+}
+
+.pm_buttons .pm_buttons-child:active {
+	    background: $button-background-active;
+	    box-shadow: inset 0 2px 2px 0 rgba(0,0,0,0.2);
+}
+
+.pm_buttons > .pm_buttons-child.fa::before,
+.pm_buttons > .pm_buttons-child > div {
+	    display: inline-flex;
+	    flex-grow: 1;
+	    align-items: center;
+	    padding: 0 10px;
+	    cursor: pointer;
+	    transition: all .3s ease-out;
+	    pointer-events: none;
+}
+
+.pm_buttons, .pm_button {
+	     [type=checkbox][disabled]:before {
+	          content:"";
+		  display:inline-block;
+		  width: 12px;
+		  height: 12px;
+		  background: lighten($border, 10%);
+		  border-radius: 2px;
+	     }
+}
+
+.pm_buttons,
+.pm_button,
+.pm_trigger { user-select: none }
+
+
+body.appConfigBody-is-mobile {
+	.pm_buttons { margin: 0 5px 0 0 }
+
+	.pm_buttons:last-of-type { margin: 0; }
+}*/
+
+/*# sourceMappingURL=pm_button.css.map */

@@ -13,7 +13,13 @@
     <link rel="stylesheet" href="pm_form.css" />
     <link rel="stylesheet" href="global.css" />
     <link rel="stylesheet" href="typography.css" />
-    
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="colors.css" />
+    <link rel="stylesheet" href="humanVerification.css" />
+    <link rel="stylesheet" href="composer.css" />
+    <link rel="stylesheet" href="pm_button.css" />
+    <link rel="stylesheet" href="composerHeader.css" />
+   
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="node_modules/babel-polyfill/dist/polyfill.js"></script>
@@ -62,7 +68,7 @@
       <li><a href="#!/appearance">appearance</a></li>
       <li><a href="#!/help">help</li>
       <li><a href="#!/identity">identity</li>
-      <li><a href="#!/signupCreationProcess">signupCreationProcess</li>
+      <li><a href="#!/composer">composer</li>
       <li><a href="#!/message">message</li>
       <li><a href="#!/send">send</li>
       <li><a href="#!/login/setup">setup</a></li>
